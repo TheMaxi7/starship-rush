@@ -301,6 +301,7 @@ GameObject:
   - component: {fileID: 41575957}
   - component: {fileID: 41575956}
   - component: {fileID: 41575962}
+  - component: {fileID: 41575963}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -348,6 +349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orientation: {fileID: 41575961}
   forwardSpeed: 10
+  maxSpeed: 40
   horizontalSpeed: 10
 --- !u!136 &41575958
 CapsuleCollider:
@@ -459,6 +461,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &41575963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41575955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f007bae5dae104eaeda5808a06a1ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 6977933796703129359, guid: aaf019b796ea8ee4886998ce4227d31b, type: 3}
+  muzzle: {fileID: 2026871139}
 --- !u!4 &44144878 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9176835685947724406, guid: fb5f44c1d4546d545b66d2ecf2fcb447, type: 3}
@@ -3986,7 +4002,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c48a972d3d024c2408a3331750786a29, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -5261,6 +5277,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f226a393243a0141bace5fd6b60bafa, type: 3}
+--- !u!4 &2026871139 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8143255594951971796, guid: e215d4550353d0948be4d3f890efed0e, type: 3}
+  m_PrefabInstance: {fileID: 1237800934}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2028049841 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8290072574063568008, guid: b4d4a657ba67ffd4bbb5553d94e0bf4a, type: 3}
