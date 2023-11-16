@@ -9,11 +9,13 @@ public class PlayerController : MonoBehaviour
     private Vector3 direction;
     public float forwardSpeed;
     public float horizontalSpeed;
+    
     float horizontal;
-
+    private Animator animator;
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
     }
 
    
@@ -22,8 +24,23 @@ public class PlayerController : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         // Set the direction based on input
         direction = new Vector3(horizontal * horizontalSpeed, 0f, forwardSpeed);
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        {
+            animator.SetBool("Left", true);
+        } else
+        {
+            animator.SetBool("Left", false);
+        }
+        
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        {
+            animator.SetBool("Right", true);
+        } else
+        {
+            animator.SetBool("Right", false);
+        }
 
-
+       
 
     }
 
