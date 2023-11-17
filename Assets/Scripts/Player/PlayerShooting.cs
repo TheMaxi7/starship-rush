@@ -6,7 +6,7 @@ public class PlayerShooting : MonoBehaviour
 {
     public Projectile projectilePrefab;
     public Transform muzzle;
-   
+    public AudioSource shootFX;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) 
@@ -18,5 +18,6 @@ public class PlayerShooting : MonoBehaviour
     void Shoot()
     {
         Instantiate(projectilePrefab, muzzle.position, transform.rotation);
+        shootFX.Play();
     }
 }

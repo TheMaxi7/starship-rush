@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float launchForce = 10000f;
+    public float launchForce = 7000f;
 
-    public Rigidbody rigidbody;
+    public Rigidbody rb;
 
     private void Awake()
     {
-        rigidbody = GetComponent < Rigidbody>();
+        rb = GetComponent < Rigidbody>();
     }
 
     private void OnEnable()
     {
-        rigidbody.AddForce(launchForce * transform.forward);
+        rb.AddForce(launchForce * transform.forward);
     }
 
 }
