@@ -12,7 +12,7 @@ public class CollectibleControl : MonoBehaviour
     public TextMeshProUGUI starCountDisplay;
     public TextMeshProUGUI heartCountDisplay;
     public TextMeshProUGUI ammoCountDisplay;
-    //public GameObject coinCountDisplay;
+    public TextMeshProUGUI heartCountContinueDisplay;
 
 
     void Update()
@@ -20,5 +20,6 @@ public class CollectibleControl : MonoBehaviour
         starCountDisplay.text =""+ starCount;
         heartCountDisplay.text = "" + heartCount;
         ammoCountDisplay.text = "" + ammoCount;
+        heartCountContinueDisplay.text = "" + heartCount;
     }
 }
