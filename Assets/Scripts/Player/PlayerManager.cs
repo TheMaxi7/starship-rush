@@ -8,6 +8,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject gameOverPanel;
     public GameObject continuePanel;
     public GameObject livesCount;
+    public ParticleSystem explosionParticle;
     void Start()
     {
         gameOver = false;
@@ -18,7 +19,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (gameOver)
         {
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
 
             if (CollectibleControl.heartCount == 0)
             {
@@ -33,7 +34,7 @@ public class PlayerManager : MonoBehaviour
     }
 
     void GameOver()
-    {
+    {   
         gameOverPanel.SetActive(true);
     }
 
@@ -42,4 +43,5 @@ public class PlayerManager : MonoBehaviour
         continuePanel.SetActive(true);
        
     }
+
 }

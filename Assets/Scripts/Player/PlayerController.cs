@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public float forwardSpeed = 10f;
     public float maxSpeed = 40f;
     public float horizontalSpeed;
+    public ParticleSystem explosionParticle;
+    public AudioSource explosionFX;
 
     float horizontal;
     private Animator animator;
@@ -51,6 +53,10 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Obstacle")
         {
+            if (gameObject.tag == "Player")
+                gameObject.SetActive(false);
+            
+            PlayExplosion();
             PlayerManager.gameOver = true;
         }
     }
@@ -59,5 +65,11 @@ public class PlayerController : MonoBehaviour
     {
    
         rb.velocity = direction;
+    }
+
+    void PlayExplosion()
+    {
+        explosionFX.Play();
+        Instantiate(explosionParticle, transform.position, Quaternion.identity);
     }
 }
