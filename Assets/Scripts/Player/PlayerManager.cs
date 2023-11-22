@@ -19,7 +19,6 @@ public class PlayerManager : MonoBehaviour
     {
         if (gameOver)
         {
-            //Time.timeScale = 0;
 
             if (CollectibleControl.heartCount == 0)
             {
@@ -36,12 +35,18 @@ public class PlayerManager : MonoBehaviour
     void GameOver()
     {   
         gameOverPanel.SetActive(true);
+        Invoke("SetPause", 3f);
     }
 
     void ShowContinuePanel()
     {
         continuePanel.SetActive(true);
-       
+        Invoke("SetPause", 3f);
+    }
+
+    void SetPause()
+    {
+        Time.timeScale = 0;
     }
 
 }

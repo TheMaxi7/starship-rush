@@ -16,10 +16,7 @@ public class GenerateLevel : MonoBehaviour
             creatingSection= true;
             StartCoroutine(GenerateSection());
         }
-        else
-        {
 
-        }
     }
 
     IEnumerator GenerateSection()

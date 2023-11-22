@@ -381,4 +381,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   launchForce: 6000
-  rigidbody: {fileID: 774306074611289934}
+  rb: {fileID: 774306074611289934}

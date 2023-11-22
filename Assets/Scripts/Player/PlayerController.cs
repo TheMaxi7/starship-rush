@@ -54,7 +54,10 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Obstacle")
         {
             if (gameObject.tag == "Player")
+            {
                 gameObject.SetActive(false);
+            }
+            
             
             PlayExplosion();
             PlayerManager.gameOver = true;

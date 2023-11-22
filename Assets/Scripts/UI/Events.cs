@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Events : MonoBehaviour
 {
+
     public void ContinueGame()
     {
         SceneManager.LoadScene("Level1");
