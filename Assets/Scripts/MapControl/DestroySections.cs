@@ -6,8 +6,6 @@ public class DestroySections : MonoBehaviour
 {
 
     public string parentName;
-
-    // Update is called once per frame
     void Update()
     {
         parentName = transform.name;
@@ -16,8 +14,8 @@ public class DestroySections : MonoBehaviour
 
     IEnumerator DestroySection()
     {
-        yield return new WaitForSeconds(10);
-        if (parentName == "StartingSection(Clone)")
+        yield return new WaitForSeconds(GenerateLevel.creationTime*4);
+        if ((parentName == "Level1_1(Clone)") || (parentName == "Level1_2(Clone)") || (parentName == "Level1_3(Clone)") || (parentName == "Level1_4(Clone)"))
         {
             Destroy(gameObject);
         }

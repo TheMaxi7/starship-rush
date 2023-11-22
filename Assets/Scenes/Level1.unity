@@ -270,7 +270,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orientation: {fileID: 41575961}
-  forwardSpeed: 10
   maxSpeed: 40
   horizontalSpeed: 10
   explosionParticle: {fileID: 198000012777718758, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
@@ -970,6 +969,10 @@ MonoBehaviour:
   - {fileID: 5554236943548327209, guid: cbc8d43e32f1496488fd987da1f18e9d, type: 3}
   - {fileID: 5554236943548327209, guid: 9a3b861e77bfd9f4481c0532485d6012, type: 3}
   - {fileID: 5554236943548327209, guid: 20896b9ba3dea1f4b9f715bab46b4666, type: 3}
+  - {fileID: 8534129143141362278, guid: a8324c86d1f468143b83d4c208296965, type: 3}
+  - {fileID: 5554236943548327209, guid: 7deb46f0d8a9dd640ad06d7bcee1f0fe, type: 3}
+  - {fileID: 5554236943548327209, guid: b3bd7005ebc5c3345845fd934319b563, type: 3}
+  - {fileID: 5554236943548327209, guid: 989eb2ef487f0b045913d368ac0ae494, type: 3}
   zPos: 25
   creatingSection: 0
   sectionNum: 0

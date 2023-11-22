@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public Transform orientation;
     private Rigidbody rb;  
     private Vector3 direction;
-    public float forwardSpeed = 10f;
+    public static float forwardSpeed = 10f;
     public float maxSpeed = 40f;
     public float horizontalSpeed;
     public ParticleSystem explosionParticle;
