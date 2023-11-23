@@ -5,8 +5,7 @@ using UnityEngine;
 public class GenerateLevel : MonoBehaviour
 {
     public GameObject[] section;
-
-    public float zPos = 25;
+    public static float zPos = 25;
     public bool creatingSection = false;
     public int sectionNum;
     public static float creationTime;
@@ -23,11 +22,11 @@ public class GenerateLevel : MonoBehaviour
     IEnumerator GenerateSection()
     {
         creationTime = 25 / PlayerController.forwardSpeed;
-        if (zPos < 200)
+        if (uiControl.points < 30)
         {
             sectionNum = Random.Range(0, 3);
         }
-        if (zPos > 200)
+        if (uiControl.points > 30)
         {
             sectionNum = Random.Range(4, 7);
         }

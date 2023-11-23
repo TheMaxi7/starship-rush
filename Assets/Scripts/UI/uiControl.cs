@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class CollectibleControl : MonoBehaviour
+public class uiControl : MonoBehaviour
 {
+    
     public static int starCount;
     public static int heartCount;
     public static int ammoCount;
@@ -13,13 +13,16 @@ public class CollectibleControl : MonoBehaviour
     public TextMeshProUGUI heartCountDisplay;
     public TextMeshProUGUI ammoCountDisplay;
     public TextMeshProUGUI heartCountContinueDisplay;
-
-
+    public TextMeshProUGUI pointsCountDisplay;
+    public Transform playerPos;
+    public static int points;
     void Update()
     {
-        starCountDisplay.text =""+ starCount;
+        points = (int)(playerPos.position.z / 10);
+        starCountDisplay.text = "" + starCount;
         heartCountDisplay.text = "" + heartCount;
         ammoCountDisplay.text = "" + ammoCount;
         heartCountContinueDisplay.text = "" + heartCount;
+        pointsCountDisplay.text = "" + points;
     }
 }

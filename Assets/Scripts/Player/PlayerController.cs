@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public Transform orientation;
+    public static Transform playerTransform;
     private Rigidbody rb;  
     private Vector3 direction;
     public static float forwardSpeed = 10f;
@@ -57,8 +57,6 @@ public class PlayerController : MonoBehaviour
             {
                 gameObject.SetActive(false);
             }
-            
-            
             PlayExplosion();
             PlayerManager.gameOver = true;
         }

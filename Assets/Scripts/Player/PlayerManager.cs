@@ -20,11 +20,11 @@ public class PlayerManager : MonoBehaviour
         if (gameOver)
         {
 
-            if (CollectibleControl.heartCount == 0)
+            if (uiControl.heartCount == 0)
             {
                 GameOver();
             }
-            else if (CollectibleControl.heartCount > 0 && !continuePanel.activeSelf)
+            else if (uiControl.heartCount > 0 && !continuePanel.activeSelf)
             {
                 
                 ShowContinuePanel();

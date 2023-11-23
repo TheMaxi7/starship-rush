@@ -9,7 +9,7 @@ public class CollectStars : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         starsFX.Play();
-        CollectibleControl.starCount++;
+        uiControl.starCount++;
         this.gameObject.SetActive(false);
     }
 }
