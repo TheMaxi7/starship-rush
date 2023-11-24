@@ -274,6 +274,10 @@ MonoBehaviour:
   verticalSpeed: 10
   explosionParticle: {fileID: 198000012777718758, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
   explosionFX: {fileID: 1978627756}
+  minY: 0.8
+  maxY: 7
+  minX: -10
+  maxX: 10
 --- !u!23 &41575959
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4795,7 +4799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 41575955}
-  camera: {fileID: 963194225}
+  cameraPos: {fileID: 0}
   continuePanel: {fileID: 1111043137}
 --- !u!4 &1250537949
 Transform:

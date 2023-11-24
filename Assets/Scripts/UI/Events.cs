@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Events : MonoBehaviour
 {
     public GameObject player;
-    public GameObject camera;
+    public GameObject cameraPos;
     public GameObject continuePanel;
     public void ContinueGame()
     {   
@@ -33,7 +33,7 @@ public class Events : MonoBehaviour
         Rigidbody playerRigidbody = player.GetComponent<Rigidbody>();
         player.transform.position = new Vector3(0f, 1.66f, GenerateLevel.zPos - 25f);
         player.transform.rotation = Quaternion.identity;
-        camera.transform.position = new Vector3(0f, 2.81f, GenerateLevel.zPos - 25f - 6.72f);
+        cameraPos.transform.position = new Vector3(0f, 2.81f, GenerateLevel.zPos - 25f - 6.72f);
         playerRigidbody.velocity = Vector3.zero;
         playerRigidbody.angularVelocity = Vector3.zero;
         playerRigidbody.MovePosition(new Vector3(0f, 1.66f, GenerateLevel.zPos - 25f));

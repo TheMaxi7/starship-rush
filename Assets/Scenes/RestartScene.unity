@@ -271,8 +271,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 40
   horizontalSpeed: 10
+  verticalSpeed: 10
   explosionParticle: {fileID: 198000012777718758, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
   explosionFX: {fileID: 1978627756}
+  minY: 0.8
+  maxY: 7
+  minX: -10
+  maxX: 10
 --- !u!23 &41575959
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2265,6 +2270,75 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4d4a657ba67ffd4bbb5553d94e0bf4a, type: 3}
+--- !u!1001 &647605561
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3943557374543601144, guid: a680ad859bd92a345b6ae6b11c6a4301, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.8966961
+      objectReference: {fileID: 0}
+    - target: {fileID: 3943557374543601144, guid: a680ad859bd92a345b6ae6b11c6a4301, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3943557374543601144, guid: a680ad859bd92a345b6ae6b11c6a4301, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 3943557374543601144, guid: a680ad859bd92a345b6ae6b11c6a4301, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3943557374543601144, guid: a680ad859bd92a345b6ae6b11c6a4301, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0000000814605
+      objectReference: {fileID: 0}
+    - target: {fileID: 3943557374543601144, guid: a680ad859bd92a345b6ae6b11c6a4301, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3943557374543601144, guid: a680ad859bd92a345b6ae6b11c6a4301, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3943557374543601144, guid: a680ad859bd92a345b6ae6b11c6a4301, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3943557374543601144, guid: a680ad859bd92a345b6ae6b11c6a4301, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3943557374543601144, guid: a680ad859bd92a345b6ae6b11c6a4301, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5453737242803064384, guid: a680ad859bd92a345b6ae6b11c6a4301, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5453737242803064384, guid: a680ad859bd92a345b6ae6b11c6a4301, type: 3}
+      propertyPath: m_ImplicitCom
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5453737242803064384, guid: a680ad859bd92a345b6ae6b11c6a4301, type: 3}
+      propertyPath: m_ImplicitTensor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8045309804241059600, guid: a680ad859bd92a345b6ae6b11c6a4301, type: 3}
+      propertyPath: m_Name
+      value: RockFracture10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a680ad859bd92a345b6ae6b11c6a4301, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -4802,6 +4876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 41575955}
+  camera: {fileID: 963194225}
   continuePanel: {fileID: 1111043137}
 --- !u!4 &1250537949
 Transform:
@@ -7043,3 +7118,4 @@ SceneRoots:
   - {fileID: 50683868}
   - {fileID: 1250537949}
   - {fileID: 1380427098}
+  - {fileID: 647605561}

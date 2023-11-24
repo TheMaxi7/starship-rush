@@ -18,4 +18,8 @@ public class Projectile : MonoBehaviour
         rb.AddForce(launchForce * transform.forward);
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        //destroyAsteroid();
+    }
 }
