@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DestroySections : MonoBehaviour
@@ -10,6 +11,7 @@ public class DestroySections : MonoBehaviour
     {
         parentName = transform.name;
         StartCoroutine(DestroySection());
+
     }
 
     IEnumerator DestroySection()
@@ -17,7 +19,10 @@ public class DestroySections : MonoBehaviour
         yield return new WaitForSeconds(GenerateLevel.creationTime*4);
         if ((parentName == "Level1_1(Clone)") || (parentName == "Level1_2(Clone)") || (parentName == "Level1_3(Clone)") || (parentName == "Level1_4(Clone)"))
         {
-            Destroy(gameObject);
+            if (PlayerManager.gameOver == false)
+            {
+                Destroy(gameObject); ;
+            }
         }
     }
 }

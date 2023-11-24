@@ -11,7 +11,7 @@ public class GenerateLevel : MonoBehaviour
     public static float creationTime;
     void Update()
     {
-        if (creatingSection == false)
+        if (!PlayerManager.gameOver && creatingSection == false)
         {
             creatingSection= true;
             StartCoroutine(GenerateSection());

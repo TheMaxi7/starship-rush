@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     public float horizontalSpeed;
     public ParticleSystem explosionParticle;
     public AudioSource explosionFX;
-
     float horizontal;
     private Animator animator;
 

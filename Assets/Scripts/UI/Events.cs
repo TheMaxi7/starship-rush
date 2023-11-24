@@ -21,7 +21,6 @@ public class Events : MonoBehaviour
         PlayerManager.gameOver = false;
         continuePanel.SetActive(false);
         uiControl.heartCount--;
-        Time.timeScale = 1;
     }
 
     public void RestartGame()
@@ -31,6 +30,7 @@ public class Events : MonoBehaviour
         uiControl.ammoCount = 0;
         uiControl.starCount = 0;
         GenerateLevel.zPos = 25f;
+        PlayerController.forwardSpeed = 10f;
     }
     public void QuitGame()
     {

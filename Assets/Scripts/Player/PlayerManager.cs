@@ -35,18 +35,15 @@ public class PlayerManager : MonoBehaviour
     void GameOver()
     {   
         gameOverPanel.SetActive(true);
-        Invoke("SetPause", 3f);
+        gameOver = true;
     }
 
     void ShowContinuePanel()
     {
         continuePanel.SetActive(true);
-        Invoke("SetPause", 3f);
+        gameOver= true;
     }
 
-    void SetPause()
-    {
-        Time.timeScale = 0;
-    }
+
 
 }
