@@ -4799,7 +4799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 41575955}
-  cameraPos: {fileID: 0}
+  cameraPos: {fileID: 963194225}
   continuePanel: {fileID: 1111043137}
 --- !u!4 &1250537949
 Transform:

@@ -9,7 +9,10 @@ public class CollectAmmos : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         ammoFX.Play();
-        uiControl.ammoCount++;
+        if (uiControl.ammoCount < 5)
+        {
+            uiControl.ammoCount++;
+        } 
         this.gameObject.SetActive(false);
     }
 }

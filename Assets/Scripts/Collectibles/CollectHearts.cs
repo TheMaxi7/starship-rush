@@ -9,7 +9,10 @@ public class CollectHearts : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         heartsFX.Play();
-        uiControl.heartCount++;
+        if (uiControl.heartCount < 3)
+        {
+            uiControl.heartCount++;
+        }
         this.gameObject.SetActive(false);
     }
 }
