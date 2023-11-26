@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2228700408977965232}
   m_Layer: 0
   m_Name: Rock Type2 04
-  m_TagString: Untagged
+  m_TagString: BreakableObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 119512}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0000000218557, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -119,5 +119,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68047f070d8a98546935e72f9fc9600c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activationDistance: 10
-  fallSpeed: 5
+  activationDistance: 25

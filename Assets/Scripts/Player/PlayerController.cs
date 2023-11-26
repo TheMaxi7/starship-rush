@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Obstacle")
+        if ((collision.gameObject.tag == "Obstacle") || (collision.gameObject.tag == "BreakableObstacle"))
         {
             if (gameObject.tag == "Player")
             {

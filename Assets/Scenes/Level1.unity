@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 6977933796703129359, guid: aaf019b796ea8ee4886998ce4227d31b, type: 3}
-  muzzle: {fileID: 2026871139}
+  muzzle: {fileID: 530283670}
   shootFX: {fileID: 633867861}
 --- !u!114 &41575964
 MonoBehaviour:
@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 6977933796703129359, guid: aaf019b796ea8ee4886998ce4227d31b, type: 3}
-  muzzle: {fileID: 530283670}
+  muzzle: {fileID: 1518450687}
   shootFX: {fileID: 633867861}
 --- !u!54 &41575966
 Rigidbody:
@@ -5142,6 +5142,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8290072574063568008, guid: b4d4a657ba67ffd4bbb5553d94e0bf4a, type: 3}
   m_PrefabInstance: {fileID: 642272912}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1518450687 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8143255594951971796, guid: e215d4550353d0948be4d3f890efed0e, type: 3}
+  m_PrefabInstance: {fileID: 1237800934}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1523783846 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7273708822720978755, guid: c54ae8c68c5cdd54585f7b7e66899ce0, type: 3}
@@ -6473,11 +6478,6 @@ AudioSource:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8290072574063568008, guid: b4d4a657ba67ffd4bbb5553d94e0bf4a, type: 3}
   m_PrefabInstance: {fileID: 969877091}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2026871139 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8143255594951971796, guid: e215d4550353d0948be4d3f890efed0e, type: 3}
-  m_PrefabInstance: {fileID: 1237800934}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2028049841 stripped
 Transform:

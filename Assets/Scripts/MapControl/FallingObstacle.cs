@@ -33,7 +33,7 @@ public class FallingObstacle : MonoBehaviour
 
     void ActivateObstacle()
     {
-       
+        StartCoroutine(DestroyAfterDelay(8.0f));
         gameObject.SetActive(true);
         activated = true;
 
@@ -44,5 +44,11 @@ public class FallingObstacle : MonoBehaviour
     void MoveTowardsPlayer()
     {
         transform.Translate(fallDirection * fallSpeed * Time.deltaTime);
+    }
+
+    private IEnumerator DestroyAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(gameObject);
     }
 }
