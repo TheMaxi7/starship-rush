@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7741808593485263709}
   - component: {fileID: 5518205507897231255}
   - component: {fileID: 3340914725442056259}
+  - component: {fileID: 3606646135384793341}
   m_Layer: 0
   m_Name: SP_Stone01
   m_TagString: Obstacle
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 69.63, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -103,6 +104,22 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2146653243720890163, guid: f4762a05c7e90004fa600fb0bf5d6109, type: 3}
+--- !u!114 &3606646135384793341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6310782072956790338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 103bef5a78ae3b0478b609e075800f15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleTrans: {fileID: 6692268166062439672}
+  activationDistance: 12
+  growthSpeed: 6.5
+  maxYScale: 260
