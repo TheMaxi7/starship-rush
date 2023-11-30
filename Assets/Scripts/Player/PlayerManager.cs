@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour
     public static bool gameOver;
     public GameObject gameOverPanel;
     public GameObject continuePanel;
+    public GameObject crosshairPanel;
     public GameObject livesCount;
     public ParticleSystem explosionParticle;
     void Start()
@@ -35,13 +36,19 @@ public class PlayerManager : MonoBehaviour
     void GameOver()
     {   
         gameOverPanel.SetActive(true);
+        crosshairPanel.SetActive(false);
+        PlayerShooting.canShoot = false;
+        Cursor.visible = true;
         gameOver = true;
     }
 
     void ShowContinuePanel()
     {
         continuePanel.SetActive(true);
-        gameOver= true;
+        crosshairPanel.SetActive(false);
+        PlayerShooting.canShoot = false;
+        Cursor.visible = true;
+        gameOver = true;
     }
 
 

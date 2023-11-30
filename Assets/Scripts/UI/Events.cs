@@ -8,10 +8,13 @@ public class Events : MonoBehaviour
     public GameObject player;
     public GameObject cameraPos;
     public GameObject continuePanel;
+    public GameObject crosshairPanel;
     public void ContinueGame()
     {   
         ResetComponents();
         uiControl.heartCount--;
+        PlayerShooting.canShoot = true;
+        crosshairPanel.SetActive(true);
     }
 
     public void RestartGame()
@@ -22,6 +25,8 @@ public class Events : MonoBehaviour
         uiControl.starCount = 0;
         GenerateLevel.zPos = 25f;
         PlayerController.forwardSpeed = 10f;
+        PlayerShooting.canShoot = true;
+        crosshairPanel.SetActive(true);
     }
     public void QuitGame()
     {

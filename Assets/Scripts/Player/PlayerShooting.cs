@@ -12,10 +12,11 @@ public class PlayerShooting : MonoBehaviour
     public float projectileForce = 50f;
     public GameObject crosshair;
     private Vector3 target;
-
+    public static bool canShoot;
     void Start() 
     {
         Cursor.visible= false;
+        canShoot = true;
     }
 
 
@@ -27,7 +28,7 @@ public class PlayerShooting : MonoBehaviour
         crosshair.transform.position = new Vector2(target.x, target.y);  
         muzzle.transform.rotation = crosshair.transform.rotation;
         Debug.DrawRay(muzzle.position, ray.direction * 10f, Color.red);
-        if (Input.GetButtonDown("Fire1"))
+        if (canShoot && Input.GetButtonDown("Fire1"))
         {
             if (uiControl.ammoCount > 0)
             {

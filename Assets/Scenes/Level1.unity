@@ -421,6 +421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 1624575909}
   continuePanel: {fileID: 1111043137}
+  crosshairPanel: {fileID: 1306955914}
   livesCount: {fileID: 2066408756}
   explosionParticle: {fileID: 198000012777718758, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
 --- !u!4 &50683868
@@ -4493,6 +4494,7 @@ MonoBehaviour:
   player: {fileID: 41575955}
   cameraPos: {fileID: 963194225}
   continuePanel: {fileID: 1111043137}
+  crosshairPanel: {fileID: 1306955914}
 --- !u!4 &1250537949
 Transform:
   m_ObjectHideFlags: 0
