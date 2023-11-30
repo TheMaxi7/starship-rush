@@ -337,7 +337,7 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
@@ -364,8 +364,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.06
-  m_Height: 0.61
+  m_Radius: 0.1
+  m_Height: 0.85
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6977933796703129359
@@ -380,5 +380,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df9ab7fce0ef0d47ba8fa2f8803f7a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchForce: 6000
+  launchForce: 40
   explosionEffectPrefab: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}

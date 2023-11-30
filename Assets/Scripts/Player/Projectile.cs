@@ -7,29 +7,13 @@ public class Projectile : MonoBehaviour
     public float launchForce = 7000f;
     public GameObject explosionEffectPrefab;
 
-    private Rigidbody rb;
-
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
-
     private void OnEnable()
     {
-        rb.AddForce(launchForce * transform.forward);
         StartCoroutine(DestroyAfterDelay(2.0f));
     }
 
-    private void Update()
-    {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, Time.deltaTime * launchForce))
-        {
-            HandleCollision(hit.collider.gameObject, hit.point);
-        }
-    }
 
-    private void HandleCollision(GameObject collidedObject, Vector3 collisionPoint)
+    public void HandleCollision(GameObject collidedObject, Vector3 collisionPoint)
     {
         if (collidedObject.CompareTag("BreakableObstacle"))
         {
