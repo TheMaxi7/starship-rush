@@ -1672,6 +1672,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Rock06 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 8205434538042630395, guid: 4229e141530e1074cbf6826842703ca8, type: 3}
+      propertyPath: m_TagString
+      value: BreakableObstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 8832789843029326401, guid: 4229e141530e1074cbf6826842703ca8, type: 3}
       propertyPath: m_LocalScale.x
       value: 3
@@ -1727,13 +1731,39 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8205434538042630395, guid: 4229e141530e1074cbf6826842703ca8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1473741829857084441}
   m_SourcePrefab: {fileID: 100100000, guid: 4229e141530e1074cbf6826842703ca8, type: 3}
 --- !u!4 &5055651461705502896 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8832789843029326401, guid: 4229e141530e1074cbf6826842703ca8, type: 3}
   m_PrefabInstance: {fileID: 4376680421087570673}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5576187082030991882 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8205434538042630395, guid: 4229e141530e1074cbf6826842703ca8, type: 3}
+  m_PrefabInstance: {fileID: 4376680421087570673}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1473741829857084441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5576187082030991882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 415538a227521a14eb8fa1d1b9661d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxDistance: 2
+  speed: 1
+  direction: 0
+  platformDir: {x: 0, y: 0, z: 0}
+  currentPosition: {x: 0, y: 0, z: 0}
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &4418934483874973819
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2614,6 +2644,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Mountain03 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3824922820600001363, guid: 4bc5d8d963ddfac48b69f5bba53a41c8, type: 3}
+      propertyPath: m_TagString
+      value: BreakableObstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4494323763509570025, guid: 4bc5d8d963ddfac48b69f5bba53a41c8, type: 3}
       propertyPath: m_LocalScale.y
       value: 4.1
@@ -2661,8 +2695,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3824922820600001363, guid: 4bc5d8d963ddfac48b69f5bba53a41c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4874803653048577596}
   m_SourcePrefab: {fileID: 100100000, guid: 4bc5d8d963ddfac48b69f5bba53a41c8, type: 3}
+--- !u!1 &5915947608799409450 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3824922820600001363, guid: 4bc5d8d963ddfac48b69f5bba53a41c8, type: 3}
+  m_PrefabInstance: {fileID: 7425714556026652281}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4874803653048577596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5915947608799409450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 415538a227521a14eb8fa1d1b9661d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxDistance: 3
+  speed: 2
+  direction: 0
+  platformDir: {x: 0, y: 0, z: 0}
+  currentPosition: {x: 0, y: 0, z: 0}
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &6436342800677023632 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4494323763509570025, guid: 4bc5d8d963ddfac48b69f5bba53a41c8, type: 3}

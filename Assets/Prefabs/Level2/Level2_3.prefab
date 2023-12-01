@@ -2712,6 +2712,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Mountain03 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3824922820600001363, guid: 4bc5d8d963ddfac48b69f5bba53a41c8, type: 3}
+      propertyPath: m_TagString
+      value: BreakableObstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4494323763509570025, guid: 4bc5d8d963ddfac48b69f5bba53a41c8, type: 3}
       propertyPath: m_LocalScale.y
       value: 4.8
@@ -2763,8 +2767,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3824922820600001363, guid: 4bc5d8d963ddfac48b69f5bba53a41c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7113046941213142938}
   m_SourcePrefab: {fileID: 100100000, guid: 4bc5d8d963ddfac48b69f5bba53a41c8, type: 3}
+--- !u!1 &6221180247556583520 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3824922820600001363, guid: 4bc5d8d963ddfac48b69f5bba53a41c8, type: 3}
+  m_PrefabInstance: {fileID: 7152500655795241779}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7113046941213142938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6221180247556583520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 415538a227521a14eb8fa1d1b9661d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxDistance: 3
+  speed: 2
+  direction: 0
+  platformDir: {x: 0, y: 0, z: 0}
+  currentPosition: {x: 0, y: 0, z: 0}
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &6709733243324279514 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4494323763509570025, guid: 4bc5d8d963ddfac48b69f5bba53a41c8, type: 3}
@@ -3346,6 +3376,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SP_Mountain03 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3824922820600001363, guid: 4bc5d8d963ddfac48b69f5bba53a41c8, type: 3}
+      propertyPath: m_TagString
+      value: BreakableObstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4494323763509570025, guid: 4bc5d8d963ddfac48b69f5bba53a41c8, type: 3}
       propertyPath: m_LocalScale.y
       value: 5.7
@@ -3393,10 +3427,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3824922820600001363, guid: 4bc5d8d963ddfac48b69f5bba53a41c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5294096702159150652}
   m_SourcePrefab: {fileID: 100100000, guid: 4bc5d8d963ddfac48b69f5bba53a41c8, type: 3}
 --- !u!4 &4661230244940327320 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4494323763509570025, guid: 4bc5d8d963ddfac48b69f5bba53a41c8, type: 3}
   m_PrefabInstance: {fileID: 9146546481517035633}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5475203533098316578 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3824922820600001363, guid: 4bc5d8d963ddfac48b69f5bba53a41c8, type: 3}
+  m_PrefabInstance: {fileID: 9146546481517035633}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5294096702159150652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5475203533098316578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 415538a227521a14eb8fa1d1b9661d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxDistance: 2
+  speed: 2
+  direction: 0
+  platformDir: {x: 0, y: 0, z: 0}
+  currentPosition: {x: 0, y: 0, z: 0}
+  startPosition: {x: 0, y: 0, z: 0}

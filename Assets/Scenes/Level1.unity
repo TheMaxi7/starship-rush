@@ -1465,10 +1465,10 @@ MonoBehaviour:
   - {fileID: 5554236943548327209, guid: 7f1bb80c548c8c7429cfe7ab5b13659d, type: 3}
   - {fileID: 5554236943548327209, guid: 7e23ac8ec855239479d7cb9c9ea3933c, type: 3}
   - {fileID: 5554236943548327209, guid: 1985c563d916a554593709b009a77636, type: 3}
-  - {fileID: 5554236943548327209, guid: 989eb2ef487f0b045913d368ac0ae494, type: 3}
-  - {fileID: 5554236943548327209, guid: 989eb2ef487f0b045913d368ac0ae494, type: 3}
-  - {fileID: 5554236943548327209, guid: 989eb2ef487f0b045913d368ac0ae494, type: 3}
-  - {fileID: 5554236943548327209, guid: 989eb2ef487f0b045913d368ac0ae494, type: 3}
+  - {fileID: 8534129143141362278, guid: 2dce3b5f0465ffe48a1df2c32ffd52ef, type: 3}
+  - {fileID: 5554236943548327209, guid: cbc8d43e32f1496488fd987da1f18e9d, type: 3}
+  - {fileID: 5554236943548327209, guid: 9a3b861e77bfd9f4481c0532485d6012, type: 3}
+  - {fileID: 5554236943548327209, guid: 20896b9ba3dea1f4b9f715bab46b4666, type: 3}
   creatingSection: 0
   sectionNum: 0
 --- !u!4 &342267150
@@ -2127,7 +2127,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 1}
   m_Intensity: 1.2
   m_Range: 10
   m_SpotAngle: 30
@@ -5131,6 +5131,18 @@ PrefabInstance:
     - target: {fileID: 8534129143141362278, guid: 2dce3b5f0465ffe48a1df2c32ffd52ef, type: 3}
       propertyPath: m_Name
       value: Level1_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541396434060661785, guid: 2dce3b5f0465ffe48a1df2c32ffd52ef, type: 3}
+      propertyPath: m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541396434060661785, guid: 2dce3b5f0465ffe48a1df2c32ffd52ef, type: 3}
+      propertyPath: m_Range
+      value: 2.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541396434060661785, guid: 2dce3b5f0465ffe48a1df2c32ffd52ef, type: 3}
+      propertyPath: m_Intensity
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

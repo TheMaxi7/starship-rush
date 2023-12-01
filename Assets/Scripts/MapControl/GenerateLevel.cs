@@ -30,9 +30,9 @@ public class GenerateLevel : MonoBehaviour
         {
             sectionNum = Random.Range(4, 7);
         }
-        if (zPos > 700 && zPos < 1100)
+        if (zPos > 700)
         {
-            sectionNum = Random.Range(8, 11);
+            sectionNum = Random.Range(0, 11);
         }
 
         Instantiate(section[sectionNum], new Vector3(0,0,zPos), Quaternion.identity);
