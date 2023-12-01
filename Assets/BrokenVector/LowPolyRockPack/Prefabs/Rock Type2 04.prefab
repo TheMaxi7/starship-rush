@@ -119,4 +119,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68047f070d8a98546935e72f9fc9600c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activationDistance: 25
+  activationDistance: 30

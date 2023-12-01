@@ -16,7 +16,7 @@ public class DestroySections : MonoBehaviour
 
     IEnumerator DestroySection()
     {
-        yield return new WaitForSeconds(GenerateLevel.creationTime*4);
+        yield return new WaitForSeconds(GenerateLevel.creationTime*10);
         if ((parentName == "Level1_1(Clone)") || (parentName == "Level1_2(Clone)") || (parentName == "Level1_3(Clone)") || (parentName == "Level1_4(Clone)"))
         {
             if (PlayerManager.gameOver == false)

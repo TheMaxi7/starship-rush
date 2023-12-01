@@ -23,7 +23,7 @@ public class Events : MonoBehaviour
         uiControl.heartCount = 0;
         uiControl.ammoCount = 0;
         uiControl.starCount = 0;
-        GenerateLevel.zPos = 25f;
+        GenerateLevel.zPos = 200;
         PlayerController.forwardSpeed = 10f;
         PlayerShooting.canShoot = true;
         crosshairPanel.SetActive(true);
