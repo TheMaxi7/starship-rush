@@ -35,10 +35,11 @@ public class Events : MonoBehaviour
 
     public void ResetComponents()
     {
+        Collider playerCollider = player.GetComponentInChildren<Collider>();
         Rigidbody playerRigidbody = player.GetComponent<Rigidbody>();
-        player.transform.position = new Vector3(0f, 1.66f, GenerateLevel.zPos - 25f);
+        player.transform.position = new Vector3(0f, 1.66f, uiControl.points*10);
         player.transform.rotation = Quaternion.identity;
-        cameraPos.transform.position = new Vector3(0f, 2.81f, GenerateLevel.zPos - 25f - 6.72f);
+        cameraPos.transform.position = new Vector3(0f, 2.81f, uiControl.points * 10 - 6.72f);
         playerRigidbody.velocity = Vector3.zero;
         playerRigidbody.angularVelocity = Vector3.zero;
         playerRigidbody.MovePosition(new Vector3(0f, 1.66f, GenerateLevel.zPos - 25f));
@@ -47,5 +48,14 @@ public class Events : MonoBehaviour
         player.SetActive(true);
         PlayerManager.gameOver = false;
         continuePanel.SetActive(false);
+        playerCollider.enabled = false;
+        StartCoroutine(EnableCollision(playerCollider, 3));
+    }
+
+    private IEnumerator EnableCollision(Collider collider, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        collider.enabled = true;
     }
 }
+

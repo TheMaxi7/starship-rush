@@ -10,6 +10,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject crosshairPanel;
     public GameObject livesCount;
     public ParticleSystem explosionParticle;
+
     void Start()
     {
         gameOver = false;
