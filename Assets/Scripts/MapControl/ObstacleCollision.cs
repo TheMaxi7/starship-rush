@@ -6,9 +6,9 @@ public class ObstacleCollision : MonoBehaviour
 {
     public AudioSource collisionFX;
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-        //collisionFX.Play();
+    private void OnTriggerEnter(Collider other)
+    {
+        collisionFX.Play();
         
-    //}
+    }
 }

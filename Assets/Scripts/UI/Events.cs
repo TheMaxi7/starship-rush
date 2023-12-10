@@ -46,7 +46,7 @@ public class Events : MonoBehaviour
         playerRigidbody.MoveRotation(Quaternion.identity);
 
         player.SetActive(true);
-        PlayerManager.gameOver = false;
+        UIManager.gameOver = false;
         continuePanel.SetActive(false);
         playerCollider.enabled = false;
         StartCoroutine(EnableCollision(playerCollider, 3));

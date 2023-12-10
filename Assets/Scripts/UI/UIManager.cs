@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
     public static bool gameOver;
     public GameObject gameOverPanel;
     public GameObject continuePanel;
     public GameObject crosshairPanel;
-    public GameObject livesCount;
-    public ParticleSystem explosionParticle;
 
     void Start()
     {

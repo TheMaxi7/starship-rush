@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
                 gameObject.SetActive(false);
             }
             PlayExplosion();
-            PlayerManager.gameOver = true;
+            UIManager.gameOver = true;
         }
     }
 

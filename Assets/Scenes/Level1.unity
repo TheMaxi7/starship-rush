@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 50683868}
   - component: {fileID: 50683867}
   m_Layer: 0
-  m_Name: PlayerManager
+  m_Name: UIManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -422,8 +422,6 @@ MonoBehaviour:
   gameOverPanel: {fileID: 1624575909}
   continuePanel: {fileID: 1111043137}
   crosshairPanel: {fileID: 1306955914}
-  livesCount: {fileID: 2066408756}
-  explosionParticle: {fileID: 198000012777718758, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
 --- !u!4 &50683868
 Transform:
   m_ObjectHideFlags: 0
@@ -432,12 +430,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 50683866}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 311.69824, y: 442.0144, z: -4.309237}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -648.30176, y: -97.985596, z: -4.309237}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 761200754}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &87049501 stripped
 Transform:
@@ -2588,6 +2586,7 @@ RectTransform:
   - {fileID: 1624575912}
   - {fileID: 1111043138}
   - {fileID: 1306955915}
+  - {fileID: 50683868}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -6841,6 +6840,5 @@ SceneRoots:
   - {fileID: 342267150}
   - {fileID: 1722624622}
   - {fileID: 761200754}
-  - {fileID: 50683868}
   - {fileID: 1250537949}
   - {fileID: 1380427098}
