@@ -12,11 +12,10 @@ public class PlayerShooting : MonoBehaviour
     public float projectileForce = 50f;
     public GameObject crosshair;
     private Vector3 target;
-    public static bool canShoot;
+    public static bool canShoot = false;
     void Start() 
     {
         Cursor.visible= false;
-        canShoot = true;
     }
 
 
@@ -58,7 +57,6 @@ public class PlayerShooting : MonoBehaviour
 
           
             Projectile newProjectile = Instantiate(projectilePrefab, muzzle.position, Quaternion.identity);
-
             newProjectile.transform.rotation = Quaternion.LookRotation(shootDirection);
 
 

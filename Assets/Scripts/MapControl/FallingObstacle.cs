@@ -6,7 +6,7 @@ public class FallingObstacle : MonoBehaviour
 {
     private Transform player;
     public float activationDistance = 25.0f;
-    private float fallSpeed = PlayerController.forwardSpeed;
+    private float fallSpeed;
 
     private bool activated = false;
     private Vector3 fallDirection;
@@ -17,7 +17,7 @@ public class FallingObstacle : MonoBehaviour
 
     void Update()
     {
-
+        fallSpeed = PlayerController.forwardSpeed;
         float zDistanceToPlayer = Mathf.Abs(transform.position.z - player.position.z);
 
         if (!activated && zDistanceToPlayer < activationDistance)

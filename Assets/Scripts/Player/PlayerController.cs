@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -8,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;  
     private Vector3 direction;
     public static float forwardSpeed = 10f;
+    public static bool canMove = false;
     public float maxSpeed = 40f;
     public float horizontalSpeed;
     public float verticalSpeed;
@@ -20,11 +22,13 @@ public class PlayerController : MonoBehaviour
     public float maxY = 7f;
     public float minX = -10f;
     public float maxX = 10f;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody>();  
         animator = GetComponent<Animator>();
         float clampedVertical = Mathf.Clamp(rb.position.y, minY, maxY);
+        StartCoroutine(StartForward());
     }
 
     void Update()
@@ -34,9 +38,10 @@ public class PlayerController : MonoBehaviour
 
         if (forwardSpeed < maxSpeed)
             forwardSpeed += 0.2f * Time.deltaTime;
-
         direction = new Vector3(horizontal * horizontalSpeed, vertical * verticalSpeed, forwardSpeed);
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+
+   
+        if ((Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) && canMove == true)
         {
             animator.SetBool("Left", true);
         }
@@ -45,7 +50,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Left", false);
         }
 
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) && canMove == true)
         {
             animator.SetBool("Right", true);
         }
@@ -53,7 +58,7 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("Right", false);
         }
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+        if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) && canMove == true)
         {
             animator.SetBool("Up", true);
         }
@@ -62,7 +67,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Up", false);
         }
 
-        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        if ((Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) && canMove == true)
         {
             animator.SetBool("Down", true);
         }
@@ -82,6 +87,7 @@ public class PlayerController : MonoBehaviour
             }
             PlayExplosion();
             UIManager.gameOver = true;
+
         }
     }
 
@@ -91,15 +97,23 @@ public class PlayerController : MonoBehaviour
         float clampedVertical = Mathf.Clamp(rb.position.y, minY, maxY);
         float clampedHorizontal = Mathf.Clamp(rb.position.x, minX, maxX);
         rb.position = new Vector3(clampedHorizontal, clampedVertical, rb.position.z);
+        if (canMove == true)
+        {
+            direction = new Vector3(horizontal * horizontalSpeed, vertical * verticalSpeed, forwardSpeed);
+            rb.velocity = direction;
+        }
 
-        direction = new Vector3(horizontal * horizontalSpeed, vertical * verticalSpeed, forwardSpeed);
-
-        rb.velocity = direction;
     }
 
     void PlayExplosion()
     {
         explosionFX.Play();
         Instantiate(explosionParticle, transform.position, Quaternion.identity);
+    }
+
+    IEnumerator StartForward()
+    {
+        yield return new WaitForSeconds(4f);
+        forwardSpeed = 10f;
     }
 }

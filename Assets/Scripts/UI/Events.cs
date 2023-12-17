@@ -9,29 +9,53 @@ public class Events : MonoBehaviour
     public GameObject cameraPos;
     public GameObject continuePanel;
     public GameObject crosshairPanel;
+    public GameObject pausePanel;
+    public GameObject settingsPanel;
+    public AudioSource backGroundMusic;
+    public GameObject gameOverPanel;
+    public GameObject gameUI;
+
     public void ContinueGame()
     {   
         ResetComponents();
         uiControl.heartCount--;
         PlayerShooting.canShoot = true;
         crosshairPanel.SetActive(true);
+        backGroundMusic.UnPause();
+        gameUI.SetActive(true);
     }
 
     public void RestartGame()
     {
         SceneManager.LoadScene("RestartScene");
         uiControl.heartCount = 0;
-        uiControl.ammoCount = 0;
+        uiControl.ammoCount = 5;
         uiControl.starCount = 0;
         GenerateLevel.zPos = 200;
         PlayerController.forwardSpeed = 10f;
-        PlayerShooting.canShoot = true;
+        Time.timeScale = 1;
+        PlayerShooting.canShoot = false;
+        PlayerController.canMove = false;
         crosshairPanel.SetActive(true);
     }
     public void QuitGame()
     {
         Application.Quit();
     }
+
+    public void ContinueRun()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        Time.timeScale = 1;
+        crosshairPanel.SetActive(true);
+        pausePanel.SetActive(false);
+        backGroundMusic.UnPause();
+        PlayerShooting.canShoot = true;
+        if (sceneName != "Tutorial")
+            gameUI.SetActive(true);
+    }
+
 
     public void ResetComponents()
     {
@@ -44,7 +68,6 @@ public class Events : MonoBehaviour
         playerRigidbody.angularVelocity = Vector3.zero;
         playerRigidbody.MovePosition(new Vector3(0f, 1.66f, GenerateLevel.zPos - 25f));
         playerRigidbody.MoveRotation(Quaternion.identity);
-
         player.SetActive(true);
         UIManager.gameOver = false;
         continuePanel.SetActive(false);
@@ -52,10 +75,44 @@ public class Events : MonoBehaviour
         StartCoroutine(EnableCollision(playerCollider, 3));
     }
 
+    public void RestartTutorial()
+    {
+        SceneManager.LoadScene("Tutorial");
+        uiControl.heartCount = 0;
+        uiControl.ammoCount = 5;
+        uiControl.starCount = 0;
+        GenerateLevel.zPos = 200;
+        PlayerShooting.canShoot = false;
+        TutPlayerController.canMove = false;
+        
+        crosshairPanel.SetActive(false);
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+        
+    }
+
     private IEnumerator EnableCollision(Collider collider, float delay)
     {
         yield return new WaitForSeconds(delay);
         collider.enabled = true;
+    }
+
+    public void OpenSettings()
+    {
+        settingsPanel.SetActive(true);
+        pausePanel.SetActive(false);
+
+
+    }
+
+    public void CloseSettings()
+    {
+        settingsPanel.SetActive(false);
+        pausePanel.SetActive(true);
+
     }
 }
 

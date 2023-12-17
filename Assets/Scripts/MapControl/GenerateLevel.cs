@@ -13,7 +13,7 @@ public class GenerateLevel : MonoBehaviour
     {
         if (!UIManager.gameOver && creatingSection == false)
         {
-            creatingSection= true;
+            creatingSection = true;
             StartCoroutine(GenerateSection());
         }
 
@@ -21,7 +21,11 @@ public class GenerateLevel : MonoBehaviour
 
     IEnumerator GenerateSection()
     {
-        creationTime = 25 / PlayerController.forwardSpeed;
+        if (PlayerController.forwardSpeed > 9)
+            creationTime = 25 / PlayerController.forwardSpeed;
+        else 
+            creationTime = 2.5f;
+
         if (zPos < 400)
         {
             sectionNum = Random.Range(0, 3);
@@ -30,9 +34,13 @@ public class GenerateLevel : MonoBehaviour
         {
             sectionNum = Random.Range(4, 7);
         }
-        if (zPos > 700)
+        if (zPos > 700 && zPos < 1100)
         {
-            sectionNum = Random.Range(0, 11);
+            sectionNum = Random.Range(8, 12);
+        }
+        if (zPos > 1100)
+        {
+            sectionNum = Random.Range(0, 12);
         }
 
         Instantiate(section[sectionNum], new Vector3(0,0,zPos), Quaternion.identity);
