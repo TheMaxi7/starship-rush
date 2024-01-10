@@ -10,7 +10,7 @@ public class TutPlayerController : MonoBehaviour
     private Vector3 direction;
     public static float forwardSpeed;
     public static bool canMove = false;
-    public float maxSpeed = 40f;
+    public float maxSpeed = 30f;
     public float horizontalSpeed;
     public float verticalSpeed;
     public ParticleSystem explosionParticle;
@@ -20,8 +20,8 @@ public class TutPlayerController : MonoBehaviour
     private Animator animator;
     public float minY = 0.8f;
     public float maxY = 7f;
-    public float minX = -10f;
-    public float maxX = 10f;
+    public float minX = -6f;
+    public float maxX = 6f;
     void Start()
     {
         forwardSpeed = 10f;

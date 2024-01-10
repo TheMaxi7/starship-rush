@@ -10,9 +10,9 @@ public class PlayerController : MonoBehaviour
     private Vector3 direction;
     public static float forwardSpeed = 10f;
     public static bool canMove = false;
-    public float maxSpeed = 40f;
-    public float horizontalSpeed;
-    public float verticalSpeed;
+    public float maxSpeed = 30f;
+    public static float horizontalSpeed = 5f;
+    public static float verticalSpeed = 5f;
     public ParticleSystem explosionParticle;
     public AudioSource explosionFX;
     float horizontal;
@@ -20,8 +20,8 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     public float minY = 0.8f;
     public float maxY = 7f;
-    public float minX = -10f;
-    public float maxX = 10f;
+    public float minX = -6f;
+    public float maxX = 6f;
     
     void Start()
     {
@@ -37,7 +37,13 @@ public class PlayerController : MonoBehaviour
         vertical = Input.GetAxis("Vertical");
 
         if (forwardSpeed < maxSpeed)
-            forwardSpeed += 0.2f * Time.deltaTime;
+        {
+            forwardSpeed += 0.1f * Time.deltaTime;
+            horizontalSpeed += 0.1f * Time.deltaTime;
+            verticalSpeed += 0.1f * Time.deltaTime;
+
+        }
+            
         direction = new Vector3(horizontal * horizontalSpeed, vertical * verticalSpeed, forwardSpeed);
 
    
@@ -115,5 +121,7 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(4f);
         forwardSpeed = 10f;
+        horizontalSpeed = 5f;
+        verticalSpeed = 5f;
     }
 }

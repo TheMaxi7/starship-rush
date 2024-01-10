@@ -10,13 +10,14 @@ public class CountDown : MonoBehaviour
     public GameObject fadeIn;
     public AudioSource countSound;
     public AudioSource goSound;
+    
     void Start()
     {
         PlayerController.forwardSpeed = 0f;
         StartCoroutine(CountDownToStart());
     }
 
-    IEnumerator CountDownToStart()
+    public IEnumerator CountDownToStart()
     {
         yield return new WaitForSeconds(1f);
         while (countDownTime > 0)
@@ -31,9 +32,11 @@ public class CountDown : MonoBehaviour
         countDownText.text = "GO!";
         goSound.Play();
         yield return new WaitForSeconds(1f);
-        countDownText.gameObject.SetActive(false);
-        PlayerController.forwardSpeed = 10f;
+        countDownText.text = "";
+        
+        PlayerController.forwardSpeed = Events.speedAtDeath;
         PlayerController.canMove = true;
         PlayerShooting.canShoot = true;
+        countDownTime = 3;
     }
 }

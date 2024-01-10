@@ -7,6 +7,7 @@ public class FallingObstacle : MonoBehaviour
     private Transform player;
     public float activationDistance = 25.0f;
     private float fallSpeed;
+    
 
     private bool activated = false;
     private Vector3 fallDirection;
@@ -43,7 +44,8 @@ public class FallingObstacle : MonoBehaviour
 
     void MoveTowardsPlayer()
     {
-        transform.Translate(fallDirection * fallSpeed * Time.deltaTime);
+        transform.Translate(fallDirection * fallSpeed * Time.deltaTime, Space.World);
+        rotateAsteroid();
     }
 
     private IEnumerator DestroyAfterDelay(float delay)
@@ -51,4 +53,11 @@ public class FallingObstacle : MonoBehaviour
         yield return new WaitForSeconds(delay);
         Destroy(gameObject);
     }
+
+
+    void rotateAsteroid()
+    {
+        transform.Rotate(-fallSpeed*0.07f, 0, 0, Space.World);
+    }
+        
 }

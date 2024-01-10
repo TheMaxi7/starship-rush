@@ -100,7 +100,7 @@ public class TutorialPopUps : MonoBehaviour
         TutPlayerController.canMove = true;
         PlayerShooting.canShoot = false;
         uiControl.heartCount = 0;
-        uiControl.ammoCount = 5;
+        uiControl.ammoCount = 15;
         uiControl.starCount = 0;
         GenerateLevel.zPos = 200;
     }

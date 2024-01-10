@@ -14,25 +14,39 @@ public class Events : MonoBehaviour
     public AudioSource backGroundMusic;
     public GameObject gameOverPanel;
     public GameObject gameUI;
+    static public Collider[] Colliders;
+    public int tileIndex;
+    public float respawnZ;
+    private CountDown countDownScript;
+    public static float speedAtDeath = 10f;
 
+    private void Start()
+    {
+        countDownScript = GetComponent<CountDown>();
+    }
     public void ContinueGame()
-    {   
+    {
+        speedAtDeath = PlayerController.forwardSpeed;
+        UIManager.gameOver = false;
         ResetComponents();
         uiControl.heartCount--;
         PlayerShooting.canShoot = true;
         crosshairPanel.SetActive(true);
         backGroundMusic.UnPause();
         gameUI.SetActive(true);
+        PlayerController.forwardSpeed = 0f;
     }
 
     public void RestartGame()
     {
         SceneManager.LoadScene("RestartScene");
         uiControl.heartCount = 0;
-        uiControl.ammoCount = 5;
+        uiControl.ammoCount = 15;
         uiControl.starCount = 0;
         GenerateLevel.zPos = 200;
         PlayerController.forwardSpeed = 10f;
+        PlayerController.verticalSpeed = 5f;
+        PlayerController.horizontalSpeed = 5f;
         Time.timeScale = 1;
         PlayerShooting.canShoot = false;
         PlayerController.canMove = false;
@@ -59,19 +73,27 @@ public class Events : MonoBehaviour
 
     public void ResetComponents()
     {
-        Collider playerCollider = player.GetComponentInChildren<Collider>();
+        StartCoroutine(countDownScript.CountDownToStart());
+        tileIndex = (int)(player.transform.position.z / 25f);
+        respawnZ = 25f * tileIndex;
+        Collider[] playerCollider = player.GetComponentsInChildren<Collider>();
         Rigidbody playerRigidbody = player.GetComponent<Rigidbody>();
-        player.transform.position = new Vector3(0f, 1.66f, uiControl.points*10);
+        player.transform.position = new Vector3(0f, 1.66f, respawnZ);
         player.transform.rotation = Quaternion.identity;
-        cameraPos.transform.position = new Vector3(0f, 2.81f, uiControl.points * 10 - 6.72f);
+        cameraPos.transform.position = new Vector3(0f, 2.81f, respawnZ - 6.72f);
         playerRigidbody.velocity = Vector3.zero;
         playerRigidbody.angularVelocity = Vector3.zero;
-        playerRigidbody.MovePosition(new Vector3(0f, 1.66f, GenerateLevel.zPos - 25f));
+        playerRigidbody.MovePosition(new Vector3(0f, 1.66f, respawnZ));
         playerRigidbody.MoveRotation(Quaternion.identity);
         player.SetActive(true);
         UIManager.gameOver = false;
         continuePanel.SetActive(false);
-        playerCollider.enabled = false;
+        foreach (Collider collider in playerCollider)
+        {
+            collider.enabled = false;
+           
+        }
+        
         StartCoroutine(EnableCollision(playerCollider, 3));
     }
 
@@ -79,7 +101,7 @@ public class Events : MonoBehaviour
     {
         SceneManager.LoadScene("Tutorial");
         uiControl.heartCount = 0;
-        uiControl.ammoCount = 5;
+        uiControl.ammoCount = 15;
         uiControl.starCount = 0;
         GenerateLevel.zPos = 200;
         PlayerShooting.canShoot = false;
@@ -94,10 +116,14 @@ public class Events : MonoBehaviour
         
     }
 
-    private IEnumerator EnableCollision(Collider collider, float delay)
+    private IEnumerator EnableCollision(Collider[] collider, float delay)
     {
         yield return new WaitForSeconds(delay);
-        collider.enabled = true;
+        foreach (Collider _collider in collider)
+        {
+            _collider.enabled = true;
+
+        }
     }
 
     public void OpenSettings()

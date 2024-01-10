@@ -24,7 +24,7 @@ public class MainMenuController : MonoBehaviour
         {
             SceneManager.LoadScene("Level1");
             uiControl.heartCount = 0;
-            uiControl.ammoCount = 5;
+            uiControl.ammoCount = 15;
             uiControl.starCount = 0;
             GenerateLevel.zPos = 200;
             PlayerController.forwardSpeed = 10f;

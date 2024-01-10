@@ -101,6 +101,7 @@ public class UIManager : MonoBehaviour
 
     void ShowContinuePanel()
     {
+        gameOver = true;
         EventSystem.current.SetSelectedGameObject(continueMenuFirst);
         continuePanel.SetActive(true);
         crosshairPanel.SetActive(false);

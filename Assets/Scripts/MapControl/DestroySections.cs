@@ -5,6 +5,7 @@ using UnityEngine;
 public class DestroySections : MonoBehaviour
 {
     public string parentName;
+    public float destructionLevelTime;
 
     private List<string> validParentNames = new List<string>
     {
@@ -29,13 +30,22 @@ public class DestroySections : MonoBehaviour
 
     void Update()
     {
+        if (!UIManager.gameOver)
+        {
+            destructionLevelTime = GenerateLevel.creationTime * 50;
+        }
+        else
+        {
+            StopAllCoroutines();
+            destructionLevelTime = 100000000f;
+        }
         parentName = transform.name;
         StartCoroutine(DestroySection());
     }
 
     IEnumerator DestroySection()
     {
-        yield return new WaitForSeconds(GenerateLevel.creationTime * 50);
+        yield return new WaitForSeconds(destructionLevelTime);
 
         if (IsValidParentName(parentName) && !UIManager.gameOver)
         {
