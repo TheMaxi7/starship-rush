@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float launchForce = 7000f;
+    public float launchForce = 1f;
     public GameObject explosionEffectPrefab;
 
     private void OnEnable()
     {
         StartCoroutine(DestroyAfterDelay(2.0f));
     }
-
+    void OnCollisionEnter(Collision collision)
+    {
+        
+        HandleCollision(collision.gameObject, collision.contacts[0].point);
+    }
 
     public void HandleCollision(GameObject collidedObject, Vector3 collisionPoint)
     {
@@ -21,8 +25,9 @@ public class Projectile : MonoBehaviour
             PlayExplosionEffect(collisionPoint);
             Destroy(gameObject);
         }
-        else if (collidedObject.CompareTag("Obstacle"))
+        else
         {
+            PlayExplosionEffect(collisionPoint);
             Destroy(gameObject);
         }
     }
@@ -37,7 +42,7 @@ public class Projectile : MonoBehaviour
         if (explosionEffectPrefab != null)
         {
             GameObject explosionEffect = Instantiate(explosionEffectPrefab, position, Quaternion.identity);
-            Destroy(explosionEffect, 2.0f);
+            Destroy(explosionEffect, 1.5f);
         }
     }
 

@@ -9,7 +9,7 @@ public class PlayerShooting : MonoBehaviour
     public Transform muzzle;
     public AudioSource shootFX;
     public AudioSource noAmmoFX;
-    public float projectileForce = 50f;
+    public float projectileForce = 20f;
     public GameObject crosshair;
     private Vector3 target;
     public static bool canShoot = false;
@@ -44,29 +44,24 @@ public class PlayerShooting : MonoBehaviour
 
     void Shoot()
     {
-        
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        float maxRaycastDistance = 50f;
+        float maxRaycastDistance = 200f;
         int layerMask = ~LayerMask.GetMask("Player");
 
         if (Physics.Raycast(ray, out hit, maxRaycastDistance, layerMask))
         {
-     
             Vector3 shootDirection = hit.point - muzzle.position;
 
-          
             Projectile newProjectile = Instantiate(projectilePrefab, muzzle.position, Quaternion.identity);
             newProjectile.transform.rotation = Quaternion.LookRotation(shootDirection);
 
-
             Rigidbody projectileRb = newProjectile.GetComponent<Rigidbody>();
             projectileRb.AddForce(shootDirection.normalized * projectileForce, ForceMode.Impulse);
-            newProjectile.HandleCollision(hit.collider.gameObject, hit.point);
+            
         }
         else
         {
- 
             Vector3 defaultShootDirection = ray.direction * maxRaycastDistance;
             Projectile newProjectile = Instantiate(projectilePrefab, muzzle.position, Quaternion.identity);
             newProjectile.transform.rotation = Quaternion.LookRotation(defaultShootDirection);
@@ -77,4 +72,5 @@ public class PlayerShooting : MonoBehaviour
 
         shootFX.Play();
     }
+
 }
