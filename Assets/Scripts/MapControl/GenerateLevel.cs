@@ -9,6 +9,7 @@ public class GenerateLevel : MonoBehaviour
     public bool creatingSection = false;
     public int sectionNum;
     public static float creationTime;
+    public Transform playerTransform;
     void Update()
     {
         if (!UIManager.gameOver && creatingSection == false)

@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 1201892938751432454}
   - component: {fileID: 6496624428091071960}
   - component: {fileID: 652290952996083865}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SoftStar
-  m_TagString: Untagged
+  m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level1_3
       objectReference: {fileID: 0}
+    - target: {fileID: 6676974566478464085, guid: 9a3b861e77bfd9f4481c0532485d6012, type: 3}
+      propertyPath: m_TagString
+      value: Collectible
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -275,7 +279,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2052877769}
         m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
         m_MethodName: SetEffects
         m_Mode: 1
@@ -787,7 +791,7 @@ GameObject:
   - component: {fileID: 172224484}
   - component: {fileID: 172224488}
   - component: {fileID: 172224487}
-  - component: {fileID: 172224486}
+  - component: {fileID: 172224489}
   - component: {fileID: 172224485}
   m_Layer: 5
   m_Name: BackToMenuButton
@@ -892,62 +896,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &172224486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 172224483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
-    m_HighlightedColor: {r: 1, g: 0.2019912, b: 0.0990566, a: 1}
-    m_PressedColor: {r: 0.3490566, g: 0.0049394714, b: 0.0049394714, a: 1}
-    m_SelectedColor: {r: 0.709, g: 0.14458038, b: 0.0695098, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 172224487}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1659087333}
-        m_TargetAssemblyTypeName: Events, Assembly-CSharp
-        m_MethodName: BackToMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &172224487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1045,6 +993,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 172224483}
   m_CullTransparentMesh: 1
+--- !u!114 &172224489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172224483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.2019912, b: 0.0990566, a: 1}
+    m_PressedColor: {r: 0.3490566, g: 0.0049394714, b: 0.0049394714, a: 1}
+    m_SelectedColor: {r: 0.709, g: 0.14458038, b: 0.0695098, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 172224487}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1659087333}
+        m_TargetAssemblyTypeName: Events, Assembly-CSharp
+        m_MethodName: BackToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &179796078
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,7 +1155,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2052877769}
         m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
         m_MethodName: SetQuality
         m_Mode: 1
@@ -1698,7 +1702,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2052877769}
         m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
         m_MethodName: SetFullscreen
         m_Mode: 6
@@ -2589,6 +2593,7 @@ GameObject:
   - component: {fileID: 384820915}
   - component: {fileID: 384820914}
   - component: {fileID: 384820913}
+  - component: {fileID: 384820916}
   m_Layer: 0
   m_Name: LevelControl
   m_TagString: Untagged
@@ -2644,6 +2649,7 @@ MonoBehaviour:
   - {fileID: 5554236943548327209, guid: a65fad71a78edb3438c49809b9e5f734, type: 3}
   creatingSection: 0
   sectionNum: 0
+  playerTransform: {fileID: 0}
 --- !u!4 &384820915
 Transform:
   m_ObjectHideFlags: 0
@@ -2666,6 +2672,21 @@ Transform:
   - {fileID: 1736327243}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &384820916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384820912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b58178af0d3119469089e069d585bb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sectionName: 
+  destructionLevelTime: 0
+  playerTransform: {fileID: 1128858201}
 --- !u!1 &390193511
 GameObject:
   m_ObjectHideFlags: 0
@@ -2826,7 +2847,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2052877769}
         m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
         m_MethodName: ResetSettings
         m_Mode: 1
@@ -5358,7 +5379,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722753386}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -5371,8 +5392,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5935,7 +5956,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 813080845}
-  - component: {fileID: 813080844}
   m_Layer: 0
   m_Name: Level1
   m_TagString: Untagged
@@ -5943,20 +5963,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &813080844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 813080843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b58178af0d3119469089e069d585bb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentName: 
-  destructionLevelTime: 0
 --- !u!4 &813080845
 Transform:
   m_ObjectHideFlags: 0
@@ -7749,7 +7755,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2052877769}
         m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
         m_MethodName: SetMusic
         m_Mode: 1
@@ -11050,7 +11056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: -1
+    m_Mode: 3
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -11779,7 +11785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: -1
+    m_Mode: 3
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -12899,7 +12905,6 @@ MonoBehaviour:
   pausePanel: {fileID: 186778307}
   settingsPanel: {fileID: 691846990}
   backGroundMusic: {fileID: 1838429358}
-  gameOverPanel: {fileID: 722753386}
   gameUI: {fileID: 573523087}
   tileIndex: 0
   respawnZ: 0
@@ -16542,12 +16547,12 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 652138121}
   - {fileID: 2052877770}
   - {fileID: 1128858201}
   - {fileID: 334752831}
   - {fileID: 1659087334}
   - {fileID: 938597301}
-  - {fileID: 652138121}
   - {fileID: 691846994}
   - {fileID: 1838429359}
   - {fileID: 813080845}

@@ -39,7 +39,7 @@ public class UIManager : MonoBehaviour
         if (gameOver)
         {
 
-            if (uiControl.heartCount == 0)
+            if (uiControl.heartCount == 0 && !gameOverPanel.activeSelf)
             {
                 GameOver();
             }
@@ -77,6 +77,9 @@ public class UIManager : MonoBehaviour
     void GameOver()
     {   
         gameOverPanel.SetActive(true);
+        Events.speedAtDeath = PlayerController.forwardSpeed;
+        Events.hSpeedAtDeath = PlayerController.horizontalSpeed;
+        Events.vSpeedAtDeath = PlayerController.verticalSpeed;
         EventSystem.current.SetSelectedGameObject(restartMenuFirst);
         crosshairPanel.SetActive(false);
         PlayerShooting.canShoot = false;

@@ -33,8 +33,10 @@ public class CountDown : MonoBehaviour
         goSound.Play();
         yield return new WaitForSeconds(1f);
         countDownText.text = "";
-        
+
         PlayerController.forwardSpeed = Events.speedAtDeath;
+        PlayerController.horizontalSpeed = Events.hSpeedAtDeath;
+        PlayerController.verticalSpeed = Events.vSpeedAtDeath;
         PlayerController.canMove = true;
         PlayerShooting.canShoot = true;
         countDownTime = 3;

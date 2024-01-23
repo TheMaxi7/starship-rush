@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public static Transform playerTransform;
-    private Rigidbody rb;  
+    private Rigidbody rb;
     private Vector3 direction;
     public static float forwardSpeed = 10f;
     public static bool canMove = false;
@@ -22,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public float maxY = 7f;
     public float minX = -6f;
     public float maxX = 6f;
-    
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();  
@@ -36,6 +35,7 @@ public class PlayerController : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
+        //Debug.Log(forwardSpeed);
         if (forwardSpeed < maxSpeed)
         {
             forwardSpeed += 0.1f * Time.deltaTime;

@@ -9,7 +9,6 @@ public class TutorialPopUps : MonoBehaviour
     public static int popUpIndex = 0;
     public GameObject GameUi;
     public GameObject Crosshair;
-    public GameObject GameOverPanel;
     public GameObject EndTutPanel;
     public static bool inTutorial = true;
     

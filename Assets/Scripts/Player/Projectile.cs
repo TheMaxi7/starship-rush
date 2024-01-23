@@ -25,7 +25,7 @@ public class Projectile : MonoBehaviour
             PlayExplosionEffect(collisionPoint);
             Destroy(gameObject);
         }
-        else
+        else 
         {
             PlayExplosionEffect(collisionPoint);
             Destroy(gameObject);

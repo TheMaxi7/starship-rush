@@ -12,13 +12,14 @@ public class Events : MonoBehaviour
     public GameObject pausePanel;
     public GameObject settingsPanel;
     public AudioSource backGroundMusic;
-    public GameObject gameOverPanel;
     public GameObject gameUI;
     static public Collider[] Colliders;
     public int tileIndex;
     public float respawnZ;
     private CountDown countDownScript;
     public static float speedAtDeath = 10f;
+    public static float hSpeedAtDeath = 5f;
+    public static float vSpeedAtDeath = 5f;
 
     private void Start()
     {
@@ -27,6 +28,8 @@ public class Events : MonoBehaviour
     public void ContinueGame()
     {
         speedAtDeath = PlayerController.forwardSpeed;
+        vSpeedAtDeath = PlayerController.verticalSpeed;
+        hSpeedAtDeath = PlayerController.horizontalSpeed;
         UIManager.gameOver = false;
         ResetComponents();
         uiControl.heartCount--;
@@ -34,7 +37,8 @@ public class Events : MonoBehaviour
         crosshairPanel.SetActive(true);
         backGroundMusic.UnPause();
         gameUI.SetActive(true);
-        PlayerController.forwardSpeed = 0f;
+        PlayerController.forwardSpeed = 0;
+        
     }
 
     public void RestartGame()
@@ -44,9 +48,9 @@ public class Events : MonoBehaviour
         uiControl.ammoCount = 15;
         uiControl.starCount = 0;
         GenerateLevel.zPos = 200;
-        PlayerController.forwardSpeed = 10f;
-        PlayerController.verticalSpeed = 5f;
-        PlayerController.horizontalSpeed = 5f;
+        speedAtDeath = 10f;
+        vSpeedAtDeath = 5f;
+        hSpeedAtDeath = 5f;
         Time.timeScale = 1;
         PlayerShooting.canShoot = false;
         PlayerController.canMove = false;
@@ -94,7 +98,7 @@ public class Events : MonoBehaviour
            
         }
         
-        StartCoroutine(EnableCollision(playerCollider, 3));
+        StartCoroutine(EnableCollision(playerCollider, 5));
     }
 
     public void RestartTutorial()
@@ -140,5 +144,6 @@ public class Events : MonoBehaviour
         pausePanel.SetActive(true);
 
     }
+
 }
 

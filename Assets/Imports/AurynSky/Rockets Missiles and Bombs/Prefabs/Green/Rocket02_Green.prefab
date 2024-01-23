@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6873989459418301606}
   - component: {fileID: 6637588726777152273}
   - component: {fileID: 1479806548747484701}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rocket02_Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}

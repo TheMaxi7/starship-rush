@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class DestroySections : MonoBehaviour
 {
-    public string parentName;
+    public string sectionName;
     public float destructionLevelTime;
-
-    private List<string> validParentNames = new List<string>
+    public Transform playerTransform;
+    private List<string> validSectionNames = new List<string>
     {
         "Level1_1(Clone)",
         "Level1_2(Clone)",
@@ -30,31 +30,37 @@ public class DestroySections : MonoBehaviour
 
     void Update()
     {
-        if (!UIManager.gameOver)
+        if (!UIManager.gameOver && playerTransform.position.z > 400)
         {
-            destructionLevelTime = GenerateLevel.creationTime * 50;
+            destructionLevelTime = GenerateLevel.creationTime * 20;
         }
         else
         {
             StopAllCoroutines();
             destructionLevelTime = 100000000f;
         }
-        parentName = transform.name;
-        StartCoroutine(DestroySection());
-    }
-
-    IEnumerator DestroySection()
-    {
-        yield return new WaitForSeconds(destructionLevelTime);
-
-        if (IsValidParentName(parentName) && !UIManager.gameOver)
+        GameObject[] allObjects = FindObjectsOfType<GameObject>();
+        foreach (GameObject go in allObjects)
         {
-            Destroy(gameObject);
+            if (go.activeInHierarchy && IsValidSectionName(go.name))
+            {
+                StartCoroutine(DestroySection(go));
+            }
         }
     }
 
-    private bool IsValidParentName(string name)
+    IEnumerator DestroySection(GameObject section)
     {
-        return validParentNames.Contains(name);
+        yield return new WaitForSeconds(destructionLevelTime);
+
+        if (!UIManager.gameOver)
+        {
+            Destroy(section);
+        }
+    }
+
+    private bool IsValidSectionName(string name)
+    {
+        return validSectionNames.Contains(name);
     }
 }

@@ -17,6 +17,7 @@ public class uiControl : MonoBehaviour
     public TextMeshProUGUI recordDisplay;
     public GameObject NewRecordPopUp;
     public Transform playerPos;
+
     public static int points;
     public static int score;
     private int record;

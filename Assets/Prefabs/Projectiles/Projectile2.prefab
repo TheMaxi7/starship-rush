@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5364525367694220916}
   - component: {fileID: 8619556729056590301}
   - component: {fileID: 7243888188824188019}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Projectile2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 7695223688109565141}
   - component: {fileID: 3972473681407339472}
   - component: {fileID: 2180095209239681435}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 2699161305643468135}
   - component: {fileID: 3419757638606107453}
   - component: {fileID: 3221795211961603488}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
