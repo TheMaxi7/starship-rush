@@ -10,6 +10,12 @@ public class GenerateLevel : MonoBehaviour
     public int sectionNum;
     public static float creationTime;
     public Transform playerTransform;
+    public static Color lv2FogColor;
+    bool converted1 = ColorUtility.TryParseHtmlString("#C38052", out lv2FogColor);
+    public static Color lv3FogColor;
+    bool converted2 = ColorUtility.TryParseHtmlString("#8A1890", out lv3FogColor);
+    public static Color lv4FogColor;
+    bool converted3 = ColorUtility.TryParseHtmlString("#5E8778", out lv4FogColor);
     void Update()
     {
         if (!UIManager.gameOver && creatingSection == false)
@@ -17,6 +23,19 @@ public class GenerateLevel : MonoBehaviour
             creatingSection = true;
             StartCoroutine(GenerateSection());
         }
+        if (playerTransform.position.z > 200 && playerTransform.position.z < 400 && converted1)
+        {
+            RenderSettings.fogColor = lv2FogColor;
+        }
+        if (playerTransform.position.z > 425 && playerTransform.position.z < 725 && converted2)
+        {
+            RenderSettings.fogColor = lv3FogColor;
+        }
+        if (playerTransform.position.z > 725 && playerTransform.position.z < 1100 && converted3)
+        {
+            RenderSettings.fogColor = lv4FogColor; 
+        }
+
 
     }
 

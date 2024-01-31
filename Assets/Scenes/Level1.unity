@@ -3050,7 +3050,7 @@ MonoBehaviour:
   - {fileID: 5554236943548327209, guid: a65fad71a78edb3438c49809b9e5f734, type: 3}
   creatingSection: 0
   sectionNum: 0
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 1128858201}
 --- !u!4 &384820915
 Transform:
   m_ObjectHideFlags: 0

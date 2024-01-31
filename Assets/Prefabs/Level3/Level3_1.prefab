@@ -2766,8 +2766,12 @@ PrefabInstance:
       value: SP_Plant04 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1813289776482246850, guid: d125ce082a85be34abe8de81c5dc33b8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 23.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 1813289776482246850, guid: d125ce082a85be34abe8de81c5dc33b8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.96
+      value: -1.71
       objectReference: {fileID: 0}
     - target: {fileID: 1813289776482246850, guid: d125ce082a85be34abe8de81c5dc33b8, type: 3}
       propertyPath: m_LocalPosition.y
