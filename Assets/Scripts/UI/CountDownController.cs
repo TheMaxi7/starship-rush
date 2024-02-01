@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class CountDownController : MonoBehaviour
 {
-    public int countDownTime;
+    [Header("Game Objects")]
     public TextMeshProUGUI countDownText;
     public GameObject fadeIn;
     public AudioSource countSound;
     public AudioSource goSound;
+    [Header("Variables")]
+    public int countDownTime;
     
     void Start()
     {

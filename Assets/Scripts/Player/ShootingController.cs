@@ -5,12 +5,15 @@ using UnityEngine.Rendering;
 
 public class ShootingController : MonoBehaviour
 {
+    [Header("Game Objects")]
     public Projectile projectilePrefab;
     public Transform muzzle;
     public AudioSource shootFX;
-    public AudioSource noAmmoFX;
-    public float projectileForce = 20f;
+    public AudioSource noAmmoFX; 
     public GameObject crosshair;
+
+    [Header("Variables")]
+    public float projectileForce = 20f;
     private Vector3 target;
     public static bool canShoot = false;
     void Start() 

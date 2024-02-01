@@ -5,17 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class EventsManager : MonoBehaviour
 {
+    [Header("Game Objects")]
     public GameObject player;
     public GameObject cameraPos;
     public GameObject continuePanel;
     public GameObject crosshairPanel;
     public GameObject pausePanel;
     public GameObject settingsPanel;
-    public AudioSource backGroundMusic;
     public GameObject gameUI;
-    static public Collider[] Colliders;
+    public AudioSource backGroundMusic;
+
+    [Header("Variables")]
     public int tileIndex;
     public float respawnZ;
+    static public Collider[] Colliders;
     private CountDownController countDownScript;
     public static float speedAtDeath = 10f;
     public static float hSpeedAtDeath = 5f;
