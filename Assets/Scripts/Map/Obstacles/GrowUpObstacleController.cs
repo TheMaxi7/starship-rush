@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrowUpObstacle : MonoBehaviour
+public class GrowUpObstacleController : MonoBehaviour
 {
     public Transform obstacleTrans;
     private Transform player;

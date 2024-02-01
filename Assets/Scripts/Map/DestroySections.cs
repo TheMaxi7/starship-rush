@@ -32,7 +32,7 @@ public class DestroySections : MonoBehaviour
     {
         if (!UIManager.gameOver && playerTransform.position.z > 400)
         {
-            destructionLevelTime = GenerateLevel.creationTime * 20;
+            destructionLevelTime = GenerateSections.creationTime * 20;
         }
         else
         {

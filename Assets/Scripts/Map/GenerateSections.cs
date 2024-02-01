@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenerateLevel : MonoBehaviour
+public class GenerateSections : MonoBehaviour
 {
     public GameObject[] section;
     public static float zPos = 200;

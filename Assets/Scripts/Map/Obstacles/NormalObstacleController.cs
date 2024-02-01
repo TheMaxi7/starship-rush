@@ -9,7 +9,7 @@ public enum Direction
     z
 };
 
-public class Scripts : MonoBehaviour
+public class NormalObstacleController : MonoBehaviour
 {
     public float MaxDistance = 1f;
     public float speed = 1f;

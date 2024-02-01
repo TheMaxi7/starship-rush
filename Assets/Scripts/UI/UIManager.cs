@@ -39,11 +39,11 @@ public class UIManager : MonoBehaviour
         if (gameOver)
         {
 
-            if (uiControl.heartCount == 0 && !gameOverPanel.activeSelf)
+            if (uiController.heartCount == 0 && !gameOverPanel.activeSelf)
             {
                 GameOver();
             }
-            else if (uiControl.heartCount > 0 && !continuePanel.activeSelf)
+            else if (uiController.heartCount > 0 && !continuePanel.activeSelf)
             {
                 
                 ShowContinuePanel();
@@ -77,21 +77,21 @@ public class UIManager : MonoBehaviour
     void GameOver()
     {   
         gameOverPanel.SetActive(true);
-        Events.speedAtDeath = PlayerController.forwardSpeed;
-        Events.hSpeedAtDeath = PlayerController.horizontalSpeed;
-        Events.vSpeedAtDeath = PlayerController.verticalSpeed;
+        EventsManager.speedAtDeath = PlayerController.forwardSpeed;
+        EventsManager.hSpeedAtDeath = PlayerController.horizontalSpeed;
+        EventsManager.vSpeedAtDeath = PlayerController.verticalSpeed;
         EventSystem.current.SetSelectedGameObject(restartMenuFirst);
         crosshairPanel.SetActive(false);
-        PlayerShooting.canShoot = false;
+        ShootingController.canShoot = false;
         backGroundMusic.Pause();
         Cursor.visible = true;
         PlayerController.canMove = false;
         gameUI.SetActive(false);
-        currentScoreTextGameOver.text = uiControl.score.ToString("0");
-        if (uiControl.score > PlayerPrefs.GetInt("bestScore"))
+        currentScoreTextGameOver.text = uiController.score.ToString("0");
+        if (uiController.score > PlayerPrefs.GetInt("bestScore"))
         {
-            PlayerPrefs.SetInt("bestScore", uiControl.score);
-            bestScoreTextGameOver.text = uiControl.score.ToString("0");
+            PlayerPrefs.SetInt("bestScore", uiController.score);
+            bestScoreTextGameOver.text = uiController.score.ToString("0");
         }
         else
         {
@@ -108,15 +108,15 @@ public class UIManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(continueMenuFirst);
         continuePanel.SetActive(true);
         crosshairPanel.SetActive(false);
-        PlayerShooting.canShoot = false;
+        ShootingController.canShoot = false;
         backGroundMusic.Pause();
         Cursor.visible = true;
         gameUI.SetActive(false);
-        currentScoreTextContinue.text = uiControl.score.ToString("0");
-        if (uiControl.score > PlayerPrefs.GetInt("bestScore"))
+        currentScoreTextContinue.text = uiController.score.ToString("0");
+        if (uiController.score > PlayerPrefs.GetInt("bestScore"))
         {
-            PlayerPrefs.SetInt("bestScore", uiControl.score);
-            bestScoreTextContinue.text = uiControl.score.ToString("0");
+            PlayerPrefs.SetInt("bestScore", uiController.score);
+            bestScoreTextContinue.text = uiController.score.ToString("0");
         }
         else
         {
@@ -131,7 +131,7 @@ public class UIManager : MonoBehaviour
         backGroundMusic.Pause();
         pausePanel.SetActive(true);
         crosshairPanel.SetActive(false);
-        PlayerShooting.canShoot = false;
+        ShootingController.canShoot = false;
     }
     void HidePausePanel()
     {
@@ -139,7 +139,7 @@ public class UIManager : MonoBehaviour
         pausePanel.SetActive(false);
         backGroundMusic.UnPause();
         crosshairPanel.SetActive(true);
-        PlayerShooting.canShoot = true;
+        ShootingController.canShoot = true;
     }
 
 

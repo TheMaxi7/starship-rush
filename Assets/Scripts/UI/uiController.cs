@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class uiControl : MonoBehaviour
+public class uiController : MonoBehaviour
 {
     
     public static int starCount;

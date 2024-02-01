@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class CountDown : MonoBehaviour
+public class CountDownController : MonoBehaviour
 {
     public int countDownTime;
     public TextMeshProUGUI countDownText;
@@ -34,11 +34,11 @@ public class CountDown : MonoBehaviour
         yield return new WaitForSeconds(1f);
         countDownText.text = "";
 
-        PlayerController.forwardSpeed = Events.speedAtDeath;
-        PlayerController.horizontalSpeed = Events.hSpeedAtDeath;
-        PlayerController.verticalSpeed = Events.vSpeedAtDeath;
+        PlayerController.forwardSpeed = EventsManager.speedAtDeath;
+        PlayerController.horizontalSpeed = EventsManager.hSpeedAtDeath;
+        PlayerController.verticalSpeed = EventsManager.vSpeedAtDeath;
         PlayerController.canMove = true;
-        PlayerShooting.canShoot = true;
+        ShootingController.canShoot = true;
         countDownTime = 3;
     }
 }

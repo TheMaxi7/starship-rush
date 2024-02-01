@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Events : MonoBehaviour
+public class EventsManager : MonoBehaviour
 {
     public GameObject player;
     public GameObject cameraPos;
@@ -16,14 +16,14 @@ public class Events : MonoBehaviour
     static public Collider[] Colliders;
     public int tileIndex;
     public float respawnZ;
-    private CountDown countDownScript;
+    private CountDownController countDownScript;
     public static float speedAtDeath = 10f;
     public static float hSpeedAtDeath = 5f;
     public static float vSpeedAtDeath = 5f;
 
     private void Start()
     {
-        countDownScript = GetComponent<CountDown>();
+        countDownScript = GetComponent<CountDownController>();
     }
     public void ContinueGame()
     {
@@ -32,8 +32,8 @@ public class Events : MonoBehaviour
         hSpeedAtDeath = PlayerController.horizontalSpeed;
         UIManager.gameOver = false;
         ResetComponents();
-        uiControl.heartCount--;
-        PlayerShooting.canShoot = true;
+        uiController.heartCount--;
+        ShootingController.canShoot = true;
         crosshairPanel.SetActive(true);
         backGroundMusic.UnPause();
         gameUI.SetActive(true);
@@ -44,15 +44,15 @@ public class Events : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene("RestartScene");
-        uiControl.heartCount = 0;
-        uiControl.ammoCount = 15;
-        uiControl.starCount = 0;
-        GenerateLevel.zPos = 200;
+        uiController.heartCount = 0;
+        uiController.ammoCount = 15;
+        uiController.starCount = 0;
+        GenerateSections.zPos = 200;
         speedAtDeath = 10f;
         vSpeedAtDeath = 5f;
         hSpeedAtDeath = 5f;
         Time.timeScale = 1;
-        PlayerShooting.canShoot = false;
+        ShootingController.canShoot = false;
         PlayerController.canMove = false;
         crosshairPanel.SetActive(true);
     }
@@ -69,7 +69,7 @@ public class Events : MonoBehaviour
         crosshairPanel.SetActive(true);
         pausePanel.SetActive(false);
         backGroundMusic.UnPause();
-        PlayerShooting.canShoot = true;
+        ShootingController.canShoot = true;
         if (sceneName != "Tutorial")
             gameUI.SetActive(true);
     }
@@ -104,11 +104,11 @@ public class Events : MonoBehaviour
     public void RestartTutorial()
     {
         SceneManager.LoadScene("Tutorial");
-        uiControl.heartCount = 0;
-        uiControl.ammoCount = 15;
-        uiControl.starCount = 0;
-        GenerateLevel.zPos = 200;
-        PlayerShooting.canShoot = false;
+        uiController.heartCount = 0;
+        uiController.ammoCount = 15;
+        uiController.starCount = 0;
+        GenerateSections.zPos = 200;
+        ShootingController.canShoot = false;
         TutPlayerController.canMove = false;
         
         crosshairPanel.SetActive(false);

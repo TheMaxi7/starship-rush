@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TutorialPopUps : MonoBehaviour
+public class TutorialController : MonoBehaviour
 {
     public GameObject[] PopUps;
     public float movementTime = 8f; 
@@ -31,11 +31,11 @@ public class TutorialPopUps : MonoBehaviour
             StartCoroutine(ReloadTutorial());
         }
 
-        if (uiControl.points == 15)
+        if (uiController.points == 15)
         {
             EndTutPanel.SetActive(true);
             TutPlayerController.canMove = false;
-            PlayerShooting.canShoot = false;
+            ShootingController.canShoot = false;
             PlayerPrefs.SetInt("TutorialHasPlayed", 1);
             inTutorial = false;
             StartCoroutine(StartLevelOne());
@@ -66,7 +66,7 @@ public class TutorialPopUps : MonoBehaviour
             if (popUpIndex == 1)
             {
             	Crosshair.SetActive(true);
-            	PlayerShooting.canShoot = true;
+            	ShootingController.canShoot = true;
             }
             	
             if (popUpIndex >= 2)
@@ -84,12 +84,12 @@ public class TutorialPopUps : MonoBehaviour
         SceneManager.LoadScene("Tutorial");
         popUpIndex= 0;
         TutPlayerController.canMove = false;
-        PlayerShooting.canShoot = false;
+        ShootingController.canShoot = false;
         Crosshair.SetActive(false);
-        uiControl.heartCount = 0;
-        uiControl.ammoCount = 5;
-        uiControl.starCount = 0;
-        GenerateLevel.zPos = 200;
+        uiController.heartCount = 0;
+        uiController.ammoCount = 5;
+        uiController.starCount = 0;
+        GenerateSections.zPos = 200;
     }
 
     private IEnumerator StartLevelOne()
@@ -97,10 +97,10 @@ public class TutorialPopUps : MonoBehaviour
         yield return new WaitForSeconds(10);
         SceneManager.LoadScene("Level1");
         TutPlayerController.canMove = true;
-        PlayerShooting.canShoot = false;
-        uiControl.heartCount = 0;
-        uiControl.ammoCount = 15;
-        uiControl.starCount = 0;
-        GenerateLevel.zPos = 200;
+        ShootingController.canShoot = false;
+        uiController.heartCount = 0;
+        uiController.ammoCount = 15;
+        uiController.starCount = 0;
+        GenerateSections.zPos = 200;
     }
 }

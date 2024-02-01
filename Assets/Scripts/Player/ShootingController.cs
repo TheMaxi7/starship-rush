@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class PlayerShooting : MonoBehaviour
+public class ShootingController : MonoBehaviour
 {
     public Projectile projectilePrefab;
     public Transform muzzle;
@@ -29,10 +29,10 @@ public class PlayerShooting : MonoBehaviour
         Debug.DrawRay(muzzle.position, ray.direction * 10f, Color.red);
         if (canShoot && Input.GetButtonDown("Fire1"))
         {
-            if (uiControl.ammoCount > 0)
+            if (uiController.ammoCount > 0)
             {
                 Shoot();
-                uiControl.ammoCount--;
+                uiController.ammoCount--;
             }
             else
             {

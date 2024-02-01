@@ -23,13 +23,13 @@ public class MainMenuController : MonoBehaviour
         } else
         {
             SceneManager.LoadScene("Level1");
-            uiControl.heartCount = 0;
-            uiControl.ammoCount = 15;
-            uiControl.starCount = 0;
-            GenerateLevel.zPos = 200;
+            uiController.heartCount = 0;
+            uiController.ammoCount = 15;
+            uiController.starCount = 0;
+            GenerateSections.zPos = 200;
             PlayerController.forwardSpeed = 10f;
             Time.timeScale = 1;
-            PlayerShooting.canShoot = false;
+            ShootingController.canShoot = false;
             PlayerController.canMove = false;
         }
             

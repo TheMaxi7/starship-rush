@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FallingObstacle : MonoBehaviour
+public class FallingObstacleController : MonoBehaviour
 {
     private Transform player;
     public float activationDistance = 25.0f;
