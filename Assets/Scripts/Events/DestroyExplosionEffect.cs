@@ -15,7 +15,7 @@ public class DestroyExplosionEffect : MonoBehaviour
     IEnumerator DestroyExplEffect()
     {
         yield return new WaitForSeconds(3);
-        if (parentName == "BigExplosionEffect(Clone)")
+        if (parentName == "DeadExplosion(Clone)")
             Destroy(gameObject);
     }
 }

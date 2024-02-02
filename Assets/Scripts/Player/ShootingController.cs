@@ -16,6 +16,7 @@ public class ShootingController : MonoBehaviour
     public float projectileForce = 20f;
     private Vector3 target;
     public static bool canShoot = false;
+    
     void Start() 
     {
         Cursor.visible= false;

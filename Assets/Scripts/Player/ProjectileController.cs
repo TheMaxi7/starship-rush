@@ -6,7 +6,6 @@ public class Projectile : MonoBehaviour
 {
     public float launchForce = 1f;
     public GameObject explosionEffectPrefab;
-
     private void OnEnable()
     {
         StartCoroutine(DestroyAfterDelay(2.0f));
