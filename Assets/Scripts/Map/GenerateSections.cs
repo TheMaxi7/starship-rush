@@ -16,6 +16,8 @@ public class GenerateSections : MonoBehaviour
     bool converted2 = ColorUtility.TryParseHtmlString("#8A1890", out lv3FogColor);
     public static Color lv4FogColor;
     bool converted3 = ColorUtility.TryParseHtmlString("#5E8778", out lv4FogColor);
+    public static Color lv5FogColor;
+    bool converted4 = ColorUtility.TryParseHtmlString("#BAA685", out lv5FogColor);
     void Update()
     {
         if (!UIManager.gameOver && creatingSection == false)
@@ -31,9 +33,13 @@ public class GenerateSections : MonoBehaviour
         {
             RenderSettings.fogColor = lv3FogColor;
         }
-        if (playerTransform.position.z > 725 && playerTransform.position.z < 1100 && converted3)
+        if (playerTransform.position.z > 725 && playerTransform.position.z < 1125 && converted3)
         {
             RenderSettings.fogColor = lv4FogColor; 
+        }
+        if (playerTransform.position.z > 1125 && playerTransform.position.z < 1625 && converted4)
+        {
+            RenderSettings.fogColor = lv5FogColor; 
         }
 
 
@@ -58,9 +64,13 @@ public class GenerateSections : MonoBehaviour
         {
             sectionNum = Random.Range(8, 12);
         }
-        if (zPos > 1100)
+        if (zPos > 1100 && zPos < 1600)
         {
-            sectionNum = Random.Range(0, 12);
+            sectionNum = Random.Range(13, 16);
+        }
+        if (zPos > 1600) 
+        {
+            sectionNum = Random.Range(0, 16);
         }
 
         Instantiate(section[sectionNum], new Vector3(0,0,zPos), Quaternion.identity);
