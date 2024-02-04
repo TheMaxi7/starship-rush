@@ -14,6 +14,9 @@ public class EventsManager : MonoBehaviour
     public GameObject settingsPanel;
     public GameObject gameUI;
     public AudioSource backGroundMusic;
+    public Animator gameOverAnim;
+    public Animator continueAnim;
+    public Animator pauseAnim;
 
     [Header("Variables")]
     public int tileIndex;
@@ -30,6 +33,7 @@ public class EventsManager : MonoBehaviour
     }
     public void ContinueGame()
     {
+        continueAnim.SetTrigger("Close");
         speedAtDeath = PlayerController.forwardSpeed;
         vSpeedAtDeath = PlayerController.verticalSpeed;
         hSpeedAtDeath = PlayerController.horizontalSpeed;
@@ -46,6 +50,7 @@ public class EventsManager : MonoBehaviour
 
     public void RestartGame()
     {
+        gameOverAnim.SetTrigger("Close");
         SceneManager.LoadScene("RestartScene");
         uiController.heartCount = 0;
         uiController.ammoCount = 15;
@@ -66,6 +71,7 @@ public class EventsManager : MonoBehaviour
 
     public void ContinueRun()
     {
+        pauseAnim.SetTrigger("Close");
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
         Time.timeScale = 1;
@@ -135,16 +141,17 @@ public class EventsManager : MonoBehaviour
 
     public void OpenSettings()
     {
+        gameUI.SetActive(false);
         settingsPanel.SetActive(true);
         pausePanel.SetActive(false);
-
-
     }
 
     public void CloseSettings()
     {
+        gameUI.SetActive(true);
         settingsPanel.SetActive(false);
         pausePanel.SetActive(true);
+        continueAnim.SetTrigger("Close");
 
     }
 
