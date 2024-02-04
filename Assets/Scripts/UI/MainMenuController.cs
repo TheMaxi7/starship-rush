@@ -10,10 +10,14 @@ public class MainMenuController : MonoBehaviour
     public GameObject PlayButton;
     public GameObject settingsPanel;
     public GameObject mainMenuPanel;
+
+
+    public Animator anim;
     private void Start()
     {
         Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, true);
         EventSystem.current.SetSelectedGameObject(PlayButton);
+        
     }
     public void Play()
     {
@@ -46,8 +50,8 @@ public class MainMenuController : MonoBehaviour
 
     public void CloseSettings()
     {
-        settingsPanel.SetActive(false);
-        mainMenuPanel.SetActive(true);
+        anim.SetTrigger("Close");
+        Invoke("OpenMainMenu", 0.2f);
 
     }
 
@@ -69,5 +73,10 @@ public class MainMenuController : MonoBehaviour
     {
         Invoke("ExitGame", 0.6f);
     }
-
+    
+    public void OpenMainMenu()
+    {
+        mainMenuPanel.SetActive(true);
+        settingsPanel.SetActive(false);
+    }
 }
