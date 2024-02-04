@@ -17,6 +17,7 @@ public class MainMenuController : MonoBehaviour
     }
     public void Play()
     {
+        
         if (PlayerPrefs.GetInt("TutorialHasPlayed") <= 0)
         {
             SceneManager.LoadScene("Tutorial");
@@ -53,6 +54,20 @@ public class MainMenuController : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void OnBecameInvisible()
+    {
+        Invoke("OpenSettings", 0.6f);
+    }
+    public void NewGame()
+    {
+        Invoke("Play", 0.6f);
+    }
+
+    public void InvQuit()
+    {
+        Invoke("ExitGame", 0.6f);
     }
 
 }

@@ -14,19 +14,19 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 1}
-  m_FogMode: 3
+  m_Fog: 1
+  m_FogColor: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
+  m_FogMode: 1
   m_FogDensity: 0.03
   m_LinearFogStart: 0
-  m_LinearFogEnd: 300
+  m_LinearFogEnd: 150
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 6
+  m_AmbientIntensity: 3.9
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 583f0d117f7056948943f87366c0f77b, type: 2}
+  m_SubtractiveShadowColor: {r: 0, g: 0, b: 0, a: 1}
+  m_SkyboxMaterial: {fileID: 2100000, guid: cc421da483ed06c49933077a621bff25, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0011536638, g: 0.0011492844, b: 0.0010758853, a: 1}
+  m_IndirectSpecularColor: {r: 0.14875913, g: 0.1458361, b: 0.15986387, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6733,8 +6733,8 @@ MonoBehaviour:
   muzzle: {fileID: 494313442}
   shootFX: {fileID: 690899154}
   noAmmoFX: {fileID: 136375973}
-  projectileForce: 100
   crosshair: {fileID: 1741720606}
+  projectileForce: 100
 --- !u!114 &689333280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7247,9 +7247,10 @@ MonoBehaviour:
   crosshairPanel: {fileID: 0}
   pausePanel: {fileID: 0}
   settingsPanel: {fileID: 1168974752}
-  backGroundMusic: {fileID: 1618335153}
-  gameOverPanel: {fileID: 0}
   gameUI: {fileID: 0}
+  backGroundMusic: {fileID: 1618335153}
+  tileIndex: 0
+  respawnZ: 0
 --- !u!4 &733335934
 Transform:
   m_ObjectHideFlags: 0
@@ -11662,7 +11663,6 @@ MonoBehaviour:
   movementTime: 3
   GameUi: {fileID: 1570639095}
   Crosshair: {fileID: 1741720606}
-  GameOverPanel: {fileID: 628588202}
   EndTutPanel: {fileID: 71587604}
 --- !u!1 &1316762678
 GameObject:
@@ -13406,8 +13406,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b58178af0d3119469089e069d585bb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentName: 
+  sectionName: 
   destructionLevelTime: 0
+  playerTransform: {fileID: 0}
 --- !u!4 &1472130222
 Transform:
   m_ObjectHideFlags: 0
