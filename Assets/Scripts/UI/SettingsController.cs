@@ -7,13 +7,15 @@ using UnityEngine.UI;
 
 public class SettingsController : MonoBehaviour
 {
+    [Header("Game Objects")]
     public Slider musicSlider;
     public Slider effectsSlider;
     public Toggle fullscreenToggle;
-    private float defaultVolume = 0;
-    private int defaultQuality = 3;
     public AudioMixer audioMixer;
     public TMP_Dropdown qualityDropdown;
+
+    private float defaultVolume = 0;
+    private int defaultQuality = 3;
    
     
     void Start()
@@ -45,10 +47,9 @@ public class SettingsController : MonoBehaviour
     private void Update()
     {
        
- 
     }
 
-
+        
     public void SetMusic()
     {
         float volume = musicSlider.value;
