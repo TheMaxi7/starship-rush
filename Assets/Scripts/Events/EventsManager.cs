@@ -26,10 +26,12 @@ public class EventsManager : MonoBehaviour
     public static float speedAtDeath = 10f;
     public static float hSpeedAtDeath = 5f;
     public static float vSpeedAtDeath = 5f;
+    public static int currentPlayerStars;
 
     private void Start()
     {
         countDownScript = GetComponent<CountDownController>();
+        currentPlayerStars = PlayerPrefs.GetInt("Stars");
     }
     public void ContinueGame()
     {
@@ -50,6 +52,7 @@ public class EventsManager : MonoBehaviour
 
     public void RestartGame()
     {
+        PlayerPrefs.SetInt("Stars", currentPlayerStars + uiController.starCount);
         gameOverAnim.SetTrigger("Close");
         SceneManager.LoadScene("RestartScene");
         uiController.heartCount = 0;
@@ -66,6 +69,7 @@ public class EventsManager : MonoBehaviour
     }
     public void QuitGame()
     {
+        PlayerPrefs.SetInt("Stars", currentPlayerStars + uiController.starCount);
         Application.Quit();
     }
 
@@ -124,7 +128,8 @@ public class EventsManager : MonoBehaviour
     }
 
     public void BackToMenu()
-    {
+    { 
+        PlayerPrefs.SetInt("Stars", currentPlayerStars + uiController.starCount);
         SceneManager.LoadScene("MainMenu");
         Time.timeScale= 1;
         
