@@ -7,6 +7,7 @@ public class ShopManager : MonoBehaviour
 {
     public GameObject ShopItem;
     public TextMeshProUGUI playerStars;
+    public static int currentPlayerStars;
     void Start()
     {
         
@@ -15,7 +16,9 @@ public class ShopManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerStars.text = EventsManager.currentPlayerStars.ToString("");
+
+        currentPlayerStars = PlayerPrefs.GetInt("Stars");
+        playerStars.text = currentPlayerStars.ToString("");
     }
 
     public void Buy()

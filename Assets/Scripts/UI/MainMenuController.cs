@@ -10,7 +10,8 @@ public class MainMenuController : MonoBehaviour
     public GameObject PlayButton;
     public GameObject settingsPanel;
     public GameObject mainMenuPanel;
-
+    public GameObject shopPanel;
+    public GameObject inventoryPanel;
 
     public Animator anim;
     private void Start()
@@ -38,6 +39,26 @@ public class MainMenuController : MonoBehaviour
             PlayerController.canMove = false;
         }
             
+    }
+    
+    public void OpenShop()
+    {
+        shopPanel.SetActive(true);
+    }
+
+    public void CloseShop()
+    {
+        shopPanel.SetActive(false);
+    }
+
+    public void OpenInventory()
+    {
+        inventoryPanel.SetActive(true);
+    }
+
+    public void CloseInvetory()
+    {
+        inventoryPanel.SetActive(false);
     }
 
     public void OpenSettings()
