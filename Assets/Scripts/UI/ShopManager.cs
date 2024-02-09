@@ -13,19 +13,10 @@ public class ShopManager : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
 
         currentPlayerStars = PlayerPrefs.GetInt("Stars");
         playerStars.text = currentPlayerStars.ToString("");
-    }
-
-    public void Buy()
-    {
-        //Get Item price
-        //Verify player stars balance
-        //subtract stars from total
-        //move item from shop to inventory 
     }
 }

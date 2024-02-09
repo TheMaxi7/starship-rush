@@ -18,7 +18,10 @@ public class MainMenuController : MonoBehaviour
     {
         Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, true);
         EventSystem.current.SetSelectedGameObject(PlayButton);
-        
+        PlayerPrefs.SetInt("Falcon", 1);
+        if (PlayerPrefs.GetString("ActiveSkin") == "")
+            PlayerPrefs.SetString("ActiveSkin", "Falcon");
+
     }
     public void Play()
     {

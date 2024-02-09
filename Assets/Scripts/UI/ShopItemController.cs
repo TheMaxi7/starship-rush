@@ -8,6 +8,8 @@ public class ShopItemController : MonoBehaviour
 {
     public TextMeshProUGUI itemPriceObj;
     public GameObject shopItem;
+    public GameObject inventoryItem;
+    public GameObject activeSkinText;
     private string itemPriceStr;
     private int itemPrice;
     private string objName;
@@ -31,6 +33,8 @@ public class ShopItemController : MonoBehaviour
             ShopManager.currentPlayerStars -= itemPrice;
             PlayerPrefs.SetInt("Stars", ShopManager.currentPlayerStars);
             shopItem.SetActive(false);
+            inventoryItem.SetActive(true);
+            //activeSkinText.SetActive(true);
             PlayerPrefs.SetInt(objName, 1);
             PlayerPrefs.SetString("ActiveSkin", objName);
 

@@ -30,6 +30,7 @@ public class EventsManager : MonoBehaviour
 
     private void Start()
     {
+        
         countDownScript = GetComponent<CountDownController>();
         currentPlayerStars = PlayerPrefs.GetInt("Stars");
     }
