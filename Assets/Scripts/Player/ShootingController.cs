@@ -11,6 +11,7 @@ public class ShootingController : MonoBehaviour
     public AudioSource shootFX;
     public AudioSource noAmmoFX; 
     public GameObject crosshair;
+    //public GameObject playerObj;
 
     [Header("Variables")]
     public float projectileForce = 20f;
@@ -20,6 +21,8 @@ public class ShootingController : MonoBehaviour
     void Start() 
     {
         Cursor.visible= false;
+        //if (PlayerPrefs.GetString("ActiveSkin") == playerObj.name)
+            //playerObj.SetActive(true);
     }
 
 
