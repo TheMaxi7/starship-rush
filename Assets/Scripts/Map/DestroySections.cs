@@ -25,7 +25,11 @@ public class DestroySections : MonoBehaviour
         "Level4b(Clone)",
         "Level4c(Clone)",
         "Level4d(Clone)",
-        "Level4e(Clone)"
+        "Level4e(Clone)",
+        "Level5_1(Clone)",
+        "Level5_2(Clone)",
+        "Level5_3(Clone)",
+        "Level5_4(Clone)",
     };
 
     void Update()
@@ -53,7 +57,7 @@ public class DestroySections : MonoBehaviour
     {
         yield return new WaitForSeconds(destructionLevelTime);
 
-        if (!UIManager.gameOver)
+        if (!UIManager.gameOver && section.transform.position.z < playerTransform.position.z - 100)
         {
             Destroy(section);
         }

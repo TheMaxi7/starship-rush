@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8780311778441107561}
   m_Layer: 0
   m_Name: Ashmoor_Tree_03
-  m_TagString: Untagged
+  m_TagString: BreakableObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
