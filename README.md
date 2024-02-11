@@ -3,7 +3,8 @@
 # Starship Rush
 A endless runner game for PC where you take control of a starship and navigate through a challenging course filled with obstacles. Your objective is to achieve the highest score possible by skillfully maneuvering through the ever-changing environment.
 
-![20240130152004-ezgif com-speed-min](https://github.com/TheMaxi7/starship-rush/assets/102146744/9cf06aa6-3019-4085-9b52-5c2ddda688c1)
+![20240211134710-ezgif com-optimize](https://github.com/TheMaxi7/starship-rush/assets/102146744/866cfb83-ee79-41a3-b7a3-ef627d7337e9)
+
 
 ## Getting Started
 Follow these steps to get Starship Rush up and running on your PC:
@@ -14,6 +15,10 @@ git clone https://github.com/TheMaxi7/starship-rush.git
 ```
 2. Open the project in Unity.
 3. Build and run the game on your PC.
+
+OR
+
+[![image](https://img.shields.io/badge/Itch.io-FA5C5C?style=for-the-badge&logo=itchdotio&logoColor=white)](https://dee-ay-games.itch.io/starship-rush)
 
 ## License
 
